@@ -5,11 +5,11 @@ import './App.css'
 
 function App() {
 
-
+  const style = { backgroundColor: 'blue' }
 
     return (
       <div className="e-Commerce Saliwonczyk">
-        <div className="App">
+        <div className="App" style={ style }>
             <NavBar />
      
             <img src={logo} className="App-logo" alt="logo"/>
