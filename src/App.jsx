@@ -1,25 +1,20 @@
-import NavBar from './components/NavBar/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import logo from './logo.svg'
 import './App.css'
+import RoutesApp from './routes/RoutesApp';
 
-function App() {
-
-  const style = { backgroundColor: 'blue' }
-
+function App() {    
+  
+    
     return (
-      <div className="e-Commerce Saliwonczyk">
-        <div className="App" style={ style }>
-            <NavBar />
-     
-            <img src={logo} className="App-logo" alt="logo"/>
-
-            </div>
-
-  </div>
-    )
+        <div className="App">
+            <RoutesApp />
+        </div>
+  )
 }
 
-export default App;
+export default App
+
+
+
 
 
