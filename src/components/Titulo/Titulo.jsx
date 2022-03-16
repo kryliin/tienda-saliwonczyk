@@ -1,6 +1,5 @@
 import './Titulo.css'
 
-
 function Titulo( {tituloProps} ) {
   return (
     <div className='titulo'> 
@@ -8,5 +7,4 @@ function Titulo( {tituloProps} ) {
         </div>
   )
 }
-
 export default Titulo

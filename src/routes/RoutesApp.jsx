@@ -1,17 +1,18 @@
 import NavBar from '../components/NavBar/NavBar'
 import Titulo from '../components/Titulo/Titulo'
-import ItemListContainer from '../container/ItemListConteiner'
+import ItemListContainer from '../container/ItemListContainer/ItemListConteiner'
 
 function RoutesApp() {
 
     return (
         <>
-            <NavBar  />          
+            <NavBar/>          
             <Titulo tituloProps='Alquileres Saliwonczyk'/>
 
             <ItemListContainer 
-                greeting='Bienvenidos a la Primer Tienda de Alquiler de Juegos de Mesa' 
                 titulo= { Titulo }
+                greeting='Bienvenidos a la Primer Tienda de Alquiler de Juegos de Mesa de la Ciudad' 
+               
             />
         </>
     )
