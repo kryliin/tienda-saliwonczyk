@@ -18,21 +18,17 @@ export const ItemListCount = (props) => {
         console.log('dependencia vacia')
     }, [])
 
-    const contar = (numero) => {
-        if (numero) {
-            setCount(contadorActual + numero)
-        } else {
+    const contar = () => {
+   
             setCount(contadorActual + 1)
         }
-    }
+    
 
     const quitar = (numero) => {
-        if (numero) {
-            setCount(contadorActual - numero)
-        } else {
+    
             setCount(contadorActual - 1)
  
-    } }
+    }
 
     useEffect(() => {
         if (contadorActual > stock) {
@@ -62,12 +58,9 @@ export const ItemListCount = (props) => {
                 <br />
                 <br />
 
-                <Button onClick={contar(numero)} variant="outline-success">Agregar</Button>{' '}
-                <input
-                    id="numero"
-                    value={numero}
-                />
-                <Button onClick={quitar(numero)} variant="outline-danger">Quitar</Button>{' '}
+                <Button onClick={contar()} variant="outline-success">Agregar</Button>{' '}
+        
+                <Button onClick={quitar()} variant="outline-danger">Quitar</Button>{' '}
                 <Button variant="outline-danger"> <CartWidget /></Button>{' '}
 
             </div>

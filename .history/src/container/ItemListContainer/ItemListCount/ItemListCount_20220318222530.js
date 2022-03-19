@@ -4,7 +4,7 @@ import CircularProgressBar from './CircularProgressBar.tsx'
 import CartWidget from '../../../components/NavBar/CartWidget'
 
 export const ItemListCount = (props) => {
-    const { stock } = props;
+    const { stock } = 10;
     const [contadorActual, setCount, numero] = useState(0)
     // const  [porcentaje] = useState(100)
 

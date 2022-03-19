@@ -7,16 +7,15 @@ function RoutesApp() {
 
     return (
         <>
-            <NavBar />
-            <Titulo tituloProps='Alquileres Saliwonczyk' />
+            <NavBar/>          
+            <Titulo tituloProps='Alquileres Saliwonczyk'/>
 
-            <ItemListContainer
-                titulo={Titulo}
-                greeting='Bienvenidos a la Primer Tienda de Alquiler de Juegos de Mesa de la Ciudad'
-
+            <ItemListContainer 
+                titulo= { Titulo }
+                greeting='Bienvenidos a la Primer Tienda de Alquiler de Juegos de Mesa de la Ciudad' 
+              
             />
-            <ItemListCount
-                stock={12} />
+             <ItemListCount />
         </>
     )
 }

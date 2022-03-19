@@ -5,7 +5,7 @@ import CartWidget from '../../../components/NavBar/CartWidget'
 
 export const ItemListCount = (props) => {
     const { stock } = props;
-    const [contadorActual, setCount, numero] = useState(0)
+    const [contadorActual, setCount] = useState(0)
     // const  [porcentaje] = useState(100)
 
     useEffect(() => {
@@ -24,6 +24,7 @@ export const ItemListCount = (props) => {
         } else {
             setCount(contadorActual + 1)
         }
+
     }
 
     const quitar = (numero) => {
@@ -31,8 +32,8 @@ export const ItemListCount = (props) => {
             setCount(contadorActual - numero)
         } else {
             setCount(contadorActual - 1)
- 
-    } }
+        }
+    }
 
     useEffect(() => {
         if (contadorActual > stock) {
@@ -44,7 +45,7 @@ export const ItemListCount = (props) => {
             setCount(0);
         }
 
-    }, [contadorActual, stock, setCount]);
+    }, [contadorActual, stock])
 
 
     return (
@@ -62,12 +63,12 @@ export const ItemListCount = (props) => {
                 <br />
                 <br />
 
-                <Button onClick={contar(numero)} variant="outline-success">Agregar</Button>{' '}
+                <Button onClick={contar(this.state.numero)} variant="outline-success">Agregar</Button>{' '}
                 <input
                     id="numero"
-                    value={numero}
+                    value={this.state.numero}
                 />
-                <Button onClick={quitar(numero)} variant="outline-danger">Quitar</Button>{' '}
+                <Button onClick={quitar(this.state.numero)} variant="outline-danger">Quitar</Button>{' '}
                 <Button variant="outline-danger"> <CartWidget /></Button>{' '}
 
             </div>

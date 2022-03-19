@@ -5,9 +5,9 @@ import CartWidget from '../../../components/NavBar/CartWidget'
 
 export const ItemListCount = (props) => {
     const { stock } = props;
-    const [contadorActual, setCount, numero] = useState(0)
+    const [contadorActual, setCount] = useState(0)
     // const  [porcentaje] = useState(100)
-
+    let numero = 0
     useEffect(() => {
         return () => {
             console.log('Contador a cero')
@@ -24,6 +24,7 @@ export const ItemListCount = (props) => {
         } else {
             setCount(contadorActual + 1)
         }
+
     }
 
     const quitar = (numero) => {
@@ -31,8 +32,8 @@ export const ItemListCount = (props) => {
             setCount(contadorActual - numero)
         } else {
             setCount(contadorActual - 1)
- 
-    } }
+        }
+    }
 
     useEffect(() => {
         if (contadorActual > stock) {
@@ -44,7 +45,7 @@ export const ItemListCount = (props) => {
             setCount(0);
         }
 
-    }, [contadorActual, stock, setCount]);
+    }, [contadorActual, stock, setCount])
 
 
     return (

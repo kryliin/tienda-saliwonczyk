@@ -24,6 +24,7 @@ export const ItemListCount = (props) => {
         } else {
             setCount(contadorActual + 1)
         }
+
     }
 
     const quitar = (numero) => {
