@@ -1,9 +1,11 @@
+
 import { React, useState, useEffect } from 'react'
 import { Button } from 'react-bootstrap'
 import CircularProgressBar from './CircularProgressBar.tsx'
 import CartWidget from '../../../components/NavBar/CartWidget'
 
-function ItemListCount({stock}) {
+export default function ItemListCount() {
+    const { stock } = 12;
     const [contadorActual, setCount, numero] = useState(0)
     // const  [porcentaje] = useState(100)
 
@@ -30,6 +32,7 @@ function ItemListCount({stock}) {
             setCount(contadorActual - numero)
         } else {
             setCount(contadorActual - 1)
+
         }
     }
 
@@ -42,6 +45,7 @@ function ItemListCount({stock}) {
                 alert('No puede ser negativo');
             setCount(0);
         }
+
     }, [contadorActual, stock, setCount]);
 
     return (
@@ -73,7 +77,7 @@ function ItemListCount({stock}) {
         </>
     );
 }
-export default ItemListCount
+
 
 
 

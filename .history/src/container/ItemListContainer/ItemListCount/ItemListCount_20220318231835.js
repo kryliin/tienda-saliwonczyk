@@ -1,9 +1,10 @@
-import { React, useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Button } from 'react-bootstrap'
 import CircularProgressBar from './CircularProgressBar.tsx'
 import CartWidget from '../../../components/NavBar/CartWidget'
 
-function ItemListCount({stock}) {
+export const ItemListCount = (props) => {
+    const { stock } = props;
     const [contadorActual, setCount, numero] = useState(0)
     // const  [porcentaje] = useState(100)
 
@@ -30,8 +31,8 @@ function ItemListCount({stock}) {
             setCount(contadorActual - numero)
         } else {
             setCount(contadorActual - 1)
-        }
-    }
+ 
+    } }
 
     useEffect(() => {
         if (contadorActual > stock) {
@@ -42,38 +43,37 @@ function ItemListCount({stock}) {
                 alert('No puede ser negativo');
             setCount(0);
         }
+
     }, [contadorActual, stock, setCount]);
+
 
     return (
         <>
-            <fieldset>
-                <div>
+        <fieldset>
+            <div>
 
-                    <CircularProgressBar
-                        selectedValue={contadorActual}
-                        maxValue={stock}
-                        activeStrokeColor='#0f4fff'
-                        withGradient
-                        radius={40}
-                    />
+                <CircularProgressBar
+                    selectedValue={contadorActual}
+                    maxValue={stock}
+                    activeStrokeColor='#0f4fff'
+                    withGradient
+                    radius={40}
+                />
 
-                    <br />
-                    <br />
+                <br />
+                <br />
 
-                    <Button onClick={contar(numero)} variant="outline-success">Agregar</Button>{' '}
-                    <input
-                        id="numero"
-                        value={numero}
-                    />
-                    <Button onClick={quitar(numero)} variant="outline-danger">Quitar</Button>{' '}
-                    <Button variant="outline-danger"> <CartWidget /></Button>{' '}
+                <Button onClick={contar(numero)} variant="outline-success">Agregar</Button>{' '}
+                <input
+                    id="numero"
+                    value={numero}
+                />
+                <Button onClick={quitar(numero)} variant="outline-danger">Quitar</Button>{' '}
+                <Button variant="outline-danger"> <CartWidget /></Button>{' '}
 
-                </div>
-            </fieldset>
+            </div>
+        </fieldset>
         </>
-    );
+    )
 }
 export default ItemListCount
-
-
-
