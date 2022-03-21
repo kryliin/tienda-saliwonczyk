@@ -4,14 +4,12 @@ import CircularProgressBar from '../ItemCount/CircularProgressBar'
 import CartWidget from '../../../components/NavBar/CartWidget'
 
 function ItemCount(props) {
-    const { stock } = props;
+    const { stock } = 12;
     const [contadorActual, setCount, numero] = useState(0)
-
     // const  [porcentaje] = useState(100)
-    /* 
-        useEffect(() => {
-            console.log('stock' + stock);
-            if (contadorActual >= stock) {
+
+    /*     useEffect(() => {
+            if (contadorActual > stock) {
                 alert('No hay mas Stock');
                 setCount(stock);
             } else {
@@ -22,43 +20,53 @@ function ItemCount(props) {
             return () => {
                 console.log('controlo stock')
             }
-        }, [stock, contadorActual, setCount]) */
+           }, [stock, contadorActual,setCount])
+     */
 
+    useEffect(() => {
+        return () => {
+            console.log('volver a cero todo')
+            setCount(0)
+        }
+    })
+    const contar = (numero) => {
+        console.log(numero);
 
-    /*     useEffect(() => {
-            return () => {
-                console.log('volver a cero todo')
-                setCount(0)
-            }
-        }) */
-
-
-    const agregar = (numero) => {
-        if (contadorActual >= stock) {
+        if (contadorActual > stock) {
             alert('No hay mas Stock');
             setCount(stock);
         } else {
-            console.log('numero' + numero);
-            if (numero) {
-                setCount(contadorActual + numero)
-            } else {
-                setCount(contadorActual + 1)
-            }
-
+            if (contadorActual < 0)
+                alert('No puede ser negativo');
+            setCount(0);
         }
+        if (numero) {
+            setCount(contadorActual + numero)
+        } else {
+            setCount(contadorActual + 1)
+        }
+        return () => {
+            console.log('agrego')
+        }
+
     }
 
     const quitar = (numero) => {
-
-        if (contadorActual < 1) {
-            alert('No puede ser negativo');
-            setCount(0);
+        if (contadorActual > stock) {
+            alert('No hay mas Stock');
+            setCount(stock);
         } else {
-            if (numero) {
-                setCount(contadorActual - numero)
-            } else {
-                setCount(contadorActual - 1)
-            }
+            if (contadorActual < 0)
+                alert('No puede ser negativo');
+            setCount(0);
+        }
+        if (numero) {
+            setCount(contadorActual - numero)
+        } else {
+            setCount(contadorActual - 1)
+        }
+        return () => {
+            console.log('quito')
         }
     }
 
@@ -77,12 +85,12 @@ function ItemCount(props) {
                 <br />
                 <br />
 
-                <Button onClick={() => agregar(numero)} variant="outline-success">Agregar</Button>{' '}
+                <Button onClick={contar} variant="outline-success">Agregar</Button>{' '}
                 <input size="1"
                     id="numero"
                     value={numero}
                 />
-                <Button onClick={() => quitar(numero)} variant="outline-danger">Quitar</Button>{' '}
+                <Button onClick={quitar} variant="outline-danger">Quitar</Button>{' '}
                 <Button variant="outline-danger"> <CartWidget /></Button>{' '}
 
             </div>

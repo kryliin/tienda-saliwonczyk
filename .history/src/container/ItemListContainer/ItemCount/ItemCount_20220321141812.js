@@ -4,14 +4,13 @@ import CircularProgressBar from '../ItemCount/CircularProgressBar'
 import CartWidget from '../../../components/NavBar/CartWidget'
 
 function ItemCount(props) {
-    const { stock } = props;
+    const { stock } = props.stock;
     const [contadorActual, setCount, numero] = useState(0)
 
     // const  [porcentaje] = useState(100)
-    /* 
-        useEffect(() => {
-            console.log('stock' + stock);
-            if (contadorActual >= stock) {
+
+    /*     useEffect(() => {
+            if (contadorActual > stock) {
                 alert('No hay mas Stock');
                 setCount(stock);
             } else {
@@ -22,43 +21,38 @@ function ItemCount(props) {
             return () => {
                 console.log('controlo stock')
             }
-        }, [stock, contadorActual, setCount]) */
+           }, [stock, contadorActual,setCount])
+     */
 
-
-    /*     useEffect(() => {
-            return () => {
-                console.log('volver a cero todo')
-                setCount(0)
-            }
-        }) */
-
-
-    const agregar = (numero) => {
-        if (contadorActual >= stock) {
-            alert('No hay mas Stock');
-            setCount(stock);
-        } else {
-            console.log('numero' + numero);
-            if (numero) {
-                setCount(contadorActual + numero)
-            } else {
-                setCount(contadorActual + 1)
-            }
-
+/*     useEffect(() => {
+        return () => {
+            console.log('volver a cero todo')
+            setCount(0)
         }
+    }) */
+
+
+    const agregar = (numero) => {   
+        console.log('numero' + numero);
+        if (numero) {
+            setCount(contadorActual + numero)
+        } else {
+            setCount(contadorActual + 1)
+        }
+        return () => {
+            console.log('agrego')
+        }
+
     }
 
     const quitar = (numero) => {
-
-        if (contadorActual < 1) {
-            alert('No puede ser negativo');
-            setCount(0);
+        if (numero) {
+            setCount(contadorActual - numero)
         } else {
-            if (numero) {
-                setCount(contadorActual - numero)
-            } else {
-                setCount(contadorActual - 1)
-            }
+            setCount(contadorActual - 1)
+        }
+        return () => {
+            console.log('quito')
         }
     }
 

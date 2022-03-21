@@ -37,28 +37,32 @@ function ItemCount(props) {
         if (contadorActual >= stock) {
             alert('No hay mas Stock');
             setCount(stock);
-        } else {
+
             console.log('numero' + numero);
             if (numero) {
                 setCount(contadorActual + numero)
             } else {
                 setCount(contadorActual + 1)
             }
-
+            return () => {
+                console.log('agrego')
+            }
         }
     }
 
     const quitar = (numero) => {
 
-        if (contadorActual < 1) {
+        if (contadorActual < 0)
             alert('No puede ser negativo');
-            setCount(0);
+        setCount(0);
+
+        if (numero) {
+            setCount(contadorActual - numero)
         } else {
-            if (numero) {
-                setCount(contadorActual - numero)
-            } else {
-                setCount(contadorActual - 1)
-            }
+            setCount(contadorActual - 1)
+        }
+        return () => {
+            console.log('quito')
         }
     }
 

@@ -53,12 +53,11 @@ function ItemCount(props) {
         if (contadorActual < 1) {
             alert('No puede ser negativo');
             setCount(0);
+        } else { }
+        if (numero) {
+            setCount(contadorActual - numero)
         } else {
-            if (numero) {
-                setCount(contadorActual - numero)
-            } else {
-                setCount(contadorActual - 1)
-            }
+            setCount(contadorActual - 1)
         }
     }
 
