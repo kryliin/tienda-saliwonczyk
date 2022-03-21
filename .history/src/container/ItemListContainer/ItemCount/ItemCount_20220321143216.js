@@ -74,12 +74,12 @@ function ItemCount(props) {
                 />
                 <br />
                 <br />
-                <Button onClick={() => agregar(numero)} variant="outline-success">Agregar</Button>{' '}
+                <Button onClick={() => agregar(numero.value)} variant="outline-success">Agregar</Button>{' '}
                 <input size="1"
                     id="numero"
                     value={numero}
                 />
-                <Button onClick={() => quitar(numero)} variant="outline-danger">Quitar</Button>{' '}
+                <Button onClick={() => quitar(numero.value)} variant="outline-danger">Quitar</Button>{' '}
                 <Button variant="outline-danger"> <CartWidget />Agregar</Button>{' '}
 
             </div>
