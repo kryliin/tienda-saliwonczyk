@@ -1,36 +1,11 @@
 import { useState } from 'react'
 import { Button } from 'react-bootstrap'
-import CircularProgressBar from '../ItemCount/CircularProgressBar'
-import CartWidget from '../../../components/NavBar/CartWidget'
+
+
 
 function ItemCount(props) {
     const { stock } = props;
     const [contadorActual, setCount, numero] = useState(0)
-
- 
-    /* 
-        useEffect(() => {
-            console.log('stock' + stock);
-            if (contadorActual >= stock) {
-                alert('No hay mas Stock');
-                setCount(stock);
-            } else {
-                if (contadorActual < 0)
-                    alert('No puede ser negativo');
-                setCount(0);
-            }
-            return () => {
-                console.log('controlo stock')
-            }
-        }, [stock, contadorActual, setCount]) */
-
-
-    /*     useEffect(() => {
-            return () => {
-                console.log('volver a cero todo')
-                setCount(0)
-            }
-        }) */
 
 
     const agregar = (numero) => {
@@ -87,3 +62,30 @@ function ItemCount(props) {
     )
 }
 export default ItemCount
+
+
+
+/*
+    useEffect(() => {
+        console.log('stock' + stock);
+        if (contadorActual >= stock) {
+            alert('No hay mas Stock');
+            setCount(stock);
+        } else {
+            if (contadorActual < 0)
+                alert('No puede ser negativo');
+            setCount(0);
+        }
+        return () => {
+            console.log('controlo stock')
+        }
+    }, [stock, contadorActual, setCount]) */
+
+
+/*     useEffect(() => {
+        return () => {
+            console.log('volver a cero todo')
+            setCount(0)
+        }
+    }) */
+
