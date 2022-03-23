@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Button } from 'react-bootstrap'
 import CircularProgressBar from '../ItemCount/CircularProgressBar'
 import CartWidget from '../../../components/NavBar/CartWidget'

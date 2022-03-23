@@ -1,7 +1,7 @@
 import NavBar from '../components/NavBar/NavBar'
 import Titulo from '../components/Titulo/Titulo'
 import ItemListContainer from '../container/ItemListContainer/ItemListConteiner'
-
+import Count from '../container/ItemListContainer/ItemCount/ItemCount.js'
 
 function RoutesApp() {
 
@@ -15,7 +15,9 @@ function RoutesApp() {
                 greeting='Bienvenidos a la Primer Tienda de Alquiler de Juegos de Mesa de la Ciudad'
 
             />
-        
+            <Count
+                stock={12}
+            />
         </>
     )
 }

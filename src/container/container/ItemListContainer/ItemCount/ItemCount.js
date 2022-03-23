@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Button } from 'react-bootstrap'
-import CircularProgressBar from '../ItemCount/CircularProgressBar'
-import CartWidget from '../../../components/NavBar/CartWidget'
+import CircularProgressBar from '../ItemCount/CircularProgressBar.js'
+import CartWidget from '../../../components/NavBar/CartWidget.js'
 
 function ItemCount(props) {
     const { stock } = props;

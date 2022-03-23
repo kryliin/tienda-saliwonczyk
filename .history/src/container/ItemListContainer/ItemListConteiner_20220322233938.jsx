@@ -39,14 +39,11 @@ function ItemListContainer({ greeting, titulo }) {
                                 <img src={producto.foto} alt='' className='w-50' />
                                 {producto.price}
                             </div>
-                            <br/>
-                            <button className="btn btn-outline-primary btn-block">
-                                    detalle del producto
-                                </button>
 
                             <div className="card-footer">
-                                     <Count stock={12}/> 
-                                
+                                <button className="btn btn-outline-primary btn-block">
+                                    detalle del producto
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -54,7 +51,9 @@ function ItemListContainer({ greeting, titulo }) {
                 </div>
 
             }
-        
+         {/*    <Count
+                stock={12}
+            /> */}
         </div>
     )
 }
