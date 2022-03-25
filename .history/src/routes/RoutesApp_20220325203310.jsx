@@ -6,7 +6,7 @@ import Count from '../container/ItemListContainer/ItemCount/ItemCount.js'
 function RoutesApp() {
 
     const onAdd = (cantidad) => {
-       alert('Se agrego al carrito '+ cantidad +' juegos');
+       alert('Se agrego al carrito '+ cantidad +'juegos');
       };
 
 
@@ -24,7 +24,7 @@ function RoutesApp() {
             <Count
                 stock={12}
                 onAdd={onAdd}
-                initial={0}
+                initial="1"
             />
         </>
     )

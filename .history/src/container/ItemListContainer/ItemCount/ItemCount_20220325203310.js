@@ -4,9 +4,9 @@ import CircularProgressBar from '../ItemCount/CircularProgressBar'
 import CartWidget from '../../../components/NavBar/CartWidget'
 
 function ItemCount(props) {
-    const { stock, onAdd, initial } = props;
-    const [contadorActual, setCount, numero] = useState(initial)
-
+    const { stock, onAdd } = props;
+    const [contadorActual, setCount] = useState(0)
+    const [initial] = useState(1)
 
     // const  [porcentaje] = useState(100)
     /* 
