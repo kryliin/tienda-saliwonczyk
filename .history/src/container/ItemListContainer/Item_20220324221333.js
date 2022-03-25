@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { getProductos } from '../../helpers/getProductos'
 import ItemCount from './ItemCount/ItemCount'
-import ItemListDetailed from './ItemListDetailed'
+import ItemListDetailed  from './ItemListDetailed'
 
 
 function Item() {
@@ -31,9 +31,9 @@ function Item() {
 
                                 <img src={producto.foto} alt='' className='w-50 h-50 d-inline-block' fluid />
                                 <button className="btn btn-outline-primary btn-block">
-                                    <ItemListDetailed label='Detalles'
-                                    producto={producto}
-                                     /> 
+                                    <ItemListDetailed
+                                        Detalles={producto}
+                                    />
                                 </button>
                                 <br />
                                 <br />
@@ -42,9 +42,7 @@ function Item() {
                             </div>
                             <br />
                             <div className="card-footer">
-                                <ItemCount 
-                                stock={producto.cantidad} 
-                                />
+                                <ItemCount stock={producto.cantidad} />
                             </div>
                         </div>
                     </div>

@@ -1,0 +1,94 @@
+{
+    "tipos": 
+    [
+      {
+        "codigo": "CFS",
+        "tipo": "Cargas Fuerzas de Seguridad",
+        "particular": false,
+        "carga": true,
+        "pasajero": false
+      },
+      {
+        "codigo": "GC",
+        "tipo": "Carga Interjurisdiccional",
+        "particular": false,
+        "carga": true,
+        "pasajero": false
+      },
+      {
+        "codigo": "GCP",
+        "tipo": "Cargas Peligrosas",
+        "particular": false,
+        "carga": true,
+        "pasajero": false
+      },
+      {
+        "codigo": "GP",
+        "tipo": "Pasajeros Interjurisdiccional",
+        "particular": false,
+        "carga": false,
+        "pasajero": true
+      },
+      {
+        "codigo": "LC",
+        "tipo": "Cargas Provincial",
+        "particular": false,
+        "carga": true,
+        "pasajero": false
+      },
+      {
+        "codigo": "LCM",
+        "tipo": "Cargas Municipal",
+        "particular": false,
+        "carga": true,
+        "pasajero": false
+      },
+      {
+        "codigo": "LP",
+        "tipo": "Pasajeros Provincial",
+        "particular": false,
+        "carga": false,
+        "pasajero": true
+      },
+      {
+        "codigo": "LPMU",
+        "tipo": "Pasajeros Municipal",
+        "particular": false,
+        "carga": false,
+        "pasajero": true
+      },
+      {
+        "codigo": "LPX",
+        "tipo": "VTJL - Ambulancias, Bomberos, Policiales",
+        "particular": true,
+        "carga": false,
+        "pasajero": false
+      },
+      {
+        "codigo": "PFS",
+        "tipo": "Personas Fuerzas de Seguridad",
+        "particular": false,
+        "carga": false,
+        "pasajero": true
+      },
+      {
+        "codigo": "PX",
+        "tipo": "Uso Particular",
+        "particular": true,
+        "carga": false,
+        "pasajero": false
+      }
+    ],
+    "metadata": {
+      "resultset": {
+        "offset": 0,
+        "count": 11,
+        "limit": 100
+      },
+      "rate_limit": {
+        "limit": 0,
+        "remaining": 0,
+        "reset": 0
+      }
+    }
+  }

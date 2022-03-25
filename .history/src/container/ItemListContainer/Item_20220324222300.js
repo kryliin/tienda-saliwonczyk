@@ -31,9 +31,9 @@ function Item() {
 
                                 <img src={producto.foto} alt='' className='w-50 h-50 d-inline-block' fluid />
                                 <button className="btn btn-outline-primary btn-block">
-                                    <ItemListDetailed label='Detalles'
+                                    <ItemListDetailed 
                                     producto={producto}
-                                     /> 
+                                     />
                                 </button>
                                 <br />
                                 <br />
