@@ -39,6 +39,7 @@ function ItemCount(props) {
             alert('No hay mas Stock');
             setCount(stock);
         } else {
+
             setCount(contadorActual + 1)
         }
 

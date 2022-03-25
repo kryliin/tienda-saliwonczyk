@@ -34,35 +34,41 @@ function ItemCount(props) {
         }) */
 
 
-    const agregar = () => {
+    const agregar = (numero) => {
         if (contadorActual >= stock) {
             alert('No hay mas Stock');
             setCount(stock);
         } else {
-            setCount(contadorActual + 1)
-        }
+            console.log('numero' + numero);
+            if (numero) {
+                setCount(contadorActual + numero)
+            } else {
+                setCount(contadorActual + 1)
+            }
 
+        }
     }
 
-
-    const quitar = () => {
+    const quitar = (numero) => {
 
         if (contadorActual < 1) {
             alert('No puede ser negativo');
             setCount(0);
         } else {
-
-            setCount(contadorActual - 1)
+            if (numero) {
+                setCount(contadorActual - numero)
+            } else {
+                setCount(contadorActual - 1)
+            }
         }
     }
-
 
     return (
         <fieldset>
             <div>
-                <Button onClick={() => agregar()} variant="outline-success">+</Button>{' '}
-                <br />
-
+            <Button onClick={() => agregar(numero)} variant="outline-success">Agregar</Button>{' '}
+            <br />
+              
                 <CircularProgressBar
                     selectedValue={contadorActual}
                     maxValue={stock}
@@ -71,9 +77,8 @@ function ItemCount(props) {
                     radius={40}
                 />
                 <br />
-
-                <Button onClick={() => quitar()} variant="outline-danger">-</Button>{' '}
-                <Button variant="outline-danger" onClick={() => { onAdd(contadorActual) }}> <CartWidget />Agregar</Button>{' '}
+                <Button onClick={() => quitar(numero)} variant="outline-danger">Quitar</Button>{' '}
+                <Button variant="outline-danger"  onClick={() => { onAdd(contadorActual)}}> <CartWidget />Agregar</Button>{' '}
             </div>
         </fieldset>
     )
