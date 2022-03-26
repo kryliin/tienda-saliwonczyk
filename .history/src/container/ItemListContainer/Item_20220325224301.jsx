@@ -18,11 +18,10 @@ const Item = ({ producto }) => {
             <div className="card-body">
 
                 <img src={producto.foto} alt='' className='w-50 h-50 d-inline-block' fluid />
-              
-                <ItemListDetailed 
-                producto={producto}
-                   /> 
-              
+                <button className="btn btn-outline-primary btn-block">
+                <ItemListDetailed producto={producto}
+                        /> Detalles
+                </button>
                 <br />
                 <br />
                 <h4 style={{ color: 'green' }}>${producto.price}</h4>

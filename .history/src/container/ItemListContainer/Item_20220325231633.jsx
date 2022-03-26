@@ -3,8 +3,8 @@ import ItemCount from './ItemCount/ItemCount.jsx';
 import ItemListDetailed from './ItemListDetailed';
 
 
-const Item = ({ producto }) => {
-
+const Item = ({ props }) => {
+    const producto =props;
     const onAdd = (cantidad) => {
         alert('Se agrego al carrito ' + cantidad + ' juegos');
     };

@@ -8,9 +8,9 @@ import ModalBody from 'react-bootstrap/ModalBody'
 import ModalFooter from 'react-bootstrap/ModalFooter'
 
 
-function Detalles({ producto }) {
+function Detalles({ props }) {
   const [show, setShow] = useState(false);
-
+  const { producto } = props;
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);

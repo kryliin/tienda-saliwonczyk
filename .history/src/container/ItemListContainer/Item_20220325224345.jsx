@@ -21,8 +21,8 @@ const Item = ({ producto }) => {
               
                 <ItemListDetailed 
                 producto={producto}
-                   /> 
-              
+                        /> Detalles
+             
                 <br />
                 <br />
                 <h4 style={{ color: 'green' }}>${producto.price}</h4>

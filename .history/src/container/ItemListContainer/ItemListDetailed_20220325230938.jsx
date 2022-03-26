@@ -8,18 +8,17 @@ import ModalBody from 'react-bootstrap/ModalBody'
 import ModalFooter from 'react-bootstrap/ModalFooter'
 
 
-function Detalles({ producto }) {
+function Detalles(props) {
   const [show, setShow] = useState(false);
-
+  const { producto } = props;
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   console.log(producto)
-  
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        {producto.nombre}
+        {producto}
       </Button>
 
       <Modal
@@ -30,12 +29,12 @@ function Detalles({ producto }) {
       >
         <ModalHeader closeButton>
           <ModalTitle id="example-custom-modal-styling-title">
-            {producto.nombre}
+            {producto}
           </ModalTitle>
         </ModalHeader>
         <ModalBody>
           <p>
-            {producto.description}
+            {producto}
           </p>
         </ModalBody>
         <ModalFooter>
@@ -46,7 +45,7 @@ function Detalles({ producto }) {
         </ModalFooter>
       </Modal>
     </>
-  )
-};
+  );
+}
 
 export default Detalles;

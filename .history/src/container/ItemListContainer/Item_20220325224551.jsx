@@ -19,9 +19,9 @@ const Item = ({ producto }) => {
 
                 <img src={producto.foto} alt='' className='w-50 h-50 d-inline-block' fluid />
               
-                <ItemListDetailed 
+                <ItemListDetailed className="btn btn-outline-primary btn-block"
                 producto={producto}
-                   /> 
+                Detalles       /> 
               
                 <br />
                 <br />

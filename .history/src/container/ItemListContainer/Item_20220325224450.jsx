@@ -19,10 +19,10 @@ const Item = ({ producto }) => {
 
                 <img src={producto.foto} alt='' className='w-50 h-50 d-inline-block' fluid />
               
-                <ItemListDetailed 
+                <ItemListDetailed value={'detalles'}
                 producto={producto}
-                   /> 
-              
+                        /> 
+             
                 <br />
                 <br />
                 <h4 style={{ color: 'green' }}>${producto.price}</h4>
