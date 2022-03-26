@@ -4,7 +4,6 @@ import ItemCount from './ItemCount/ItemCount'
 import ItemListDetailed from './ItemListDetailed'
 
 
-
 function Item() {
     const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(true)
@@ -36,7 +35,9 @@ function Item() {
 
                                 <img src={producto.foto} alt='' className='w-50 h-50 d-inline-block' fluid />
                                 <button className="btn btn-outline-primary btn-block">
-                                    Ver Detalles
+                                    <ItemListDetailed label='Detalles'
+                                        producto={producto}
+                                    />
                                 </button>
                                 <br />
                                 <br />

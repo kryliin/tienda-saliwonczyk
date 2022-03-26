@@ -4,7 +4,6 @@ import ItemCount from './ItemCount/ItemCount'
 import ItemListDetailed from './ItemListDetailed'
 
 
-
 function Item() {
     const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(true)

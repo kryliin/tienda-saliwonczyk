@@ -4,14 +4,9 @@ import ItemCount from './ItemCount/ItemCount'
 import ItemListDetailed from './ItemListDetailed'
 
 
-
 function Item() {
     const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(true)
-
-    const onAdd = (cantidad) => {
-        alert('Se agrego al carrito ' + cantidad + ' juegos');
-    };
 
     useEffect(() => {
         getProductos //simulacion
@@ -36,7 +31,9 @@ function Item() {
 
                                 <img src={producto.foto} alt='' className='w-50 h-50 d-inline-block' fluid />
                                 <button className="btn btn-outline-primary btn-block">
-                                    Ver Detalles
+                                    <ItemListDetailed
+                                        Detalles={producto}
+                                    />
                                 </button>
                                 <br />
                                 <br />
@@ -45,11 +42,7 @@ function Item() {
                             </div>
                             <br />
                             <div className="card-footer">
-                                <ItemCount
-                                    stock={producto.cantidad}
-                                    onAdd={onAdd}
-                                    initial={0}
-                                />
+                                <ItemCount stock={producto.cantidad} />
                             </div>
                         </div>
                     </div>

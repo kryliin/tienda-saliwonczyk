@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { getProductos } from '../../helpers/getProductos'
 import ItemCount from './ItemCount/ItemCount'
-import ItemListDetailed from './ItemListDetailed'
 
 
 
