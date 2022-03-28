@@ -1,6 +1,6 @@
 import React from 'react';
-import ItemCount from '../ItemCount/ItemCount';
-import ItemDetailedConteiner from '../ItemDetailsConteiner/ItemDetailedConteiner';
+import ItemCount from '../ItemCount/ItemCount.jsx';
+import ItemDetailedConteiner from '../ItemDetails/ItemDetailedConteiner';
 
 
 const Item = ({ producto }) => {
@@ -8,7 +8,6 @@ const Item = ({ producto }) => {
     const onAdd = (cantidad) => {
         alert('Se agrego al carrito ' + cantidad + ' juegos');
     };
-
 
     return (
         <div className="card w-90 h-90 mt-5 border border-primary shadow p-2 mb-5 bg-white rounded" >
@@ -19,11 +18,11 @@ const Item = ({ producto }) => {
             <div className="card-body">
 
                 <img src={producto.foto} alt='' className='w-50 h-50 d-inline-block' fluid />
-            
-
-                <ItemDetailedConteiner onClick producto={producto} />
-
-
+              
+                <ItemDetailedConteiner 
+                producto={producto}
+                   /> 
+              
                 <br />
                 <br />
                 <h4 style={{ color: 'green' }}>${producto.price}</h4>

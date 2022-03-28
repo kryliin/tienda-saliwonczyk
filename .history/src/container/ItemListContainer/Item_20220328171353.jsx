@@ -19,9 +19,7 @@ const Item = ({ producto }) => {
             <div className="card-body">
 
                 <img src={producto.foto} alt='' className='w-50 h-50 d-inline-block' fluid />
-            
-
-                <ItemDetailedConteiner onClick producto={producto} />
+                <ItemDetailedConteiner producto={producto} />
 
 
                 <br />
