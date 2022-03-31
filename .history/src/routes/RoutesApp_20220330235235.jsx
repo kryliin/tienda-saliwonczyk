@@ -32,7 +32,7 @@ function RoutesApp() {
                     />} 
                 />              
                 <Route path="/detalle/:detalleId" element={<ItemDetailedConteiner />} />
-                <Route path="/NavBar/CartWidget" element={<CartWidget />} />
+                <Route path="/cart" element={<CartWidget />} />
         
                 <Route path="/*" element={<Navigate to='/' replace/> } />
                 

@@ -2,9 +2,8 @@ import NavBar from '../components/NavBar/NavBar'
 import Titulo from '../components/Titulo/Titulo'
 import ItemListContainer from '../container/ItemListContainer/ItemListConteiner'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-
+import Cart from '../components/Cart/Cart'
 import ItemDetailedConteiner from '../container/ItemDetailsConteiner/ItemDetailedConteiner'
-import CartWidget from '../components/NavBar/CartWidget'
 
 function RoutesApp() {
 
@@ -32,7 +31,7 @@ function RoutesApp() {
                     />} 
                 />              
                 <Route path="/detalle/:detalleId" element={<ItemDetailedConteiner />} />
-                <Route path="/NavBar/CartWidget" element={<CartWidget />} />
+                <Route path="/cart" element={<Cart />} />
         
                 <Route path="/*" element={<Navigate to='/' replace/> } />
                 
