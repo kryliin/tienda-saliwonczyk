@@ -14,7 +14,7 @@ const ItemDetailedConteiner = () => {
       //.then((data) => {if (data.size === 0) {alert("No hay resultados");}
       .then(resp => setProducto(resp))
       .catch((error) => {
-        console.error("Error al traer los contactos", error);
+        console.error("Error al traer los datos", error);
       })
       .finally(() => setLoading(false))
   }, [])
@@ -41,7 +41,6 @@ const ItemDetailedConteiner = () => {
     </div>
   );
 };
-
 
 export default ItemDetailedConteiner;
 

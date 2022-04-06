@@ -28,14 +28,14 @@ function RoutesApp() {
                 <Route 
                     path="/categoria/:categoriaId" 
                     element={<ItemListContainer 
-                        greeting='Bienvenidos a la Primer Tienda de Alquiler de Juegos de Mesa de la Ciudad'
+                        greeting='Hola soy ItemListContainer' 
                         titulo= { Titulo }
                     />} 
                 />              
                 <Route path="/detalle/:detalleId" element={<ItemDetailedConteiner />} />
                 <Route path="/Faq" element={<Faq />} />
                 <Route path="/Quines" element={<QuienesSomos />} />
-                <Route path="/Cart" element={<CartWidget />} />
+                <Route path="/NavBar/CartWidget" element={<CartWidget />} />
         
                 <Route path="/*" element={<Navigate to='/' replace/> } />
                 

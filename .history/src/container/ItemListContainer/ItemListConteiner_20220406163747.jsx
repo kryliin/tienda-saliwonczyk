@@ -31,15 +31,18 @@ function ItemListContainer({ greeting }) {
 
     return (
         <div>
-            {greeting}<hr />
-            {loading ?
-                <h2>Tirando Dados...</h2>
-                :
-                <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>
-                    <ItemList producto={producto} />
-                </div>
-            }
-        </div>
+        {loading ?
+            <h2>Tirando Dados...</h2>
+            :
+            <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+              //  {producto.map((producto) => <div key={producto.id} className='col-md-3 p-1'>
+                    <ItemList producto={producto}
+                    />
+               // </div>
+                )}
+            </div>
+        }
+    </div>
     )
 }
 

@@ -1,6 +1,6 @@
 import ItemList from './ItemList'
 import React, { useState, useEffect } from "react";
-import { getProductos } from '../../helpers/getProductos.js'
+import { getProductosID } from '../../helpers/getProductos.js'
 import { useParams } from 'react-router-dom'
 
 
@@ -11,7 +11,7 @@ function ItemListContainer({ greeting }) {
 
     useEffect(() => {
         if (categoriaId) {
-            getProductos //simulacion
+            getProductosID //simulacion
                 //.then((data) => {if (data.size === 0) {alert("No hay resultados");}
                 .then(resp => setProducto(resp.filter(item => item.categoria === categoriaId)))
                 .catch((error) => {
@@ -19,7 +19,7 @@ function ItemListContainer({ greeting }) {
                 })
                 .finally(() => setLoading(false))
         } else {
-            getProductos //simulacion
+            getProductosID //simulacion
                 //.then((data) => {if (data.size === 0) {alert("No hay resultados");}
                 .then(resp => setProducto(resp))
                 .catch((error) => {
@@ -31,15 +31,18 @@ function ItemListContainer({ greeting }) {
 
     return (
         <div>
-            {greeting}<hr />
-            {loading ?
-                <h2>Tirando Dados...</h2>
-                :
-                <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>
-                    <ItemList producto={producto} />
+        {loading ?
+            <h2>Tirando Dados...</h2>
+            :
+            <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+                {producto.map((producto) => <div key={producto.id} className='col-md-3 p-1'>
+                    <ItemList producto={producto}
+                    />
                 </div>
-            }
-        </div>
+                )}
+            </div>
+        }
+    </div>
     )
 }
 

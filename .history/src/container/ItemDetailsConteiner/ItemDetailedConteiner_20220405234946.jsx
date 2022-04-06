@@ -7,41 +7,50 @@ import { getProductosID } from '../../helpers/getProductos.js'
 const ItemDetailedConteiner = () => {
   const [unProducto, setProducto] = useState([])
   const [loading, setLoading] = useState(true)
-
+  const { categoriaId } = useParams()
 
   useEffect(() => {
-    getProductosID //simulacion
-      //.then((data) => {if (data.size === 0) {alert("No hay resultados");}
-      .then(resp => setProducto(resp))
-      .catch((error) => {
-        console.error("Error al traer los contactos", error);
-      })
-      .finally(() => setLoading(false))
-  }, [])
+    if (categoriaId) {
+      getProductosID //simulacion
+        //.then((data) => {if (data.size === 0) {alert("No hay resultados");}
+        .then(resp => setProducto(resp.filter(item => item.categoria === categoriaId)))
+        .catch((error) => {
+          console.error("Error al traer los datos", error);
+        })
+        .finally(() => setLoading(false))
+    } else {
+      getProductosID //simulacion
+        //.then((data) => {if (data.size === 0) {alert("No hay resultados");}
+        .then(resp => setProducto(resp))
+        .catch((error) => {
+          console.error("Error al traer los datos", error);
+        })
+        .finally(() => setLoading(false))
+    }
+  }, [categoriaId])
 
 
   return (
     <div>
-        <div>
-            {loading ?
-                <h2>Tirando Dados...</h2>
-                :
-                <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-                    {unProducto.map((producto) => <div key={producto.id} className='col-md-3 p-1'>
-                      
-                      <ItemDetailed producto={producto}/>
-                 
-                    
-                    </div>
-                    )}
-                </div>
-            }
-        </div>
-    )
+      <div>
+        {loading ?
+          <h2>Tirando Dados...</h2>
+          :
+          <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+            {unProducto.map((producto) => <div key={producto.id} className='col-md-3 p-1'>
+
+              <ItemDetailed producto={producto} />
+
+
+            </div>
+            )}
+          </div>
+        }
+      </div>
+      )
     </div>
   );
 };
-
 
 export default ItemDetailedConteiner;
 

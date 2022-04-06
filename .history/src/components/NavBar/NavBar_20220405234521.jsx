@@ -17,12 +17,6 @@ export const NavBar = () => {
                             <Nav.Link to="../QuienesSomos/QuienesSomos.jsx">¿Quienes Somos?</Nav.Link>
                             <Nav.Link to="../Faq/faq.jsx">F.A.Q</Nav.Link>
                             <Nav.Link to="../Contacto/contacto.jsx">Contacto</Nav.Link>
-
-                            <Nav.Link to="/categoria/FAMILIAR">Familiar</Nav.Link>
-                            <Nav.Link to="/categoria/ESTRATEGIA">Estrategia</Nav.Link>
-                            <Nav.Link to="/categoria/CONOCIMIENTO">Preguntas y Respuestas</Nav.Link>
-                            <Nav.Link to="/categoria/INFANTIL">Infantiles</Nav.Link>
-
                             <NavDropdown title="Juegos" id="collasible-nav-dropdown">
                                 <NavDropdown.Item to="/categoria/FAMILIAR">Familiar</NavDropdown.Item>
                                 <NavDropdown.Item to="/categoria/ACCION">Accion</NavDropdown.Item>

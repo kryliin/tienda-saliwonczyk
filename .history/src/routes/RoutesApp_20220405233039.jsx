@@ -28,7 +28,7 @@ function RoutesApp() {
                 <Route 
                     path="/categoria/:categoriaId" 
                     element={<ItemListContainer 
-                        greeting='Bienvenidos a la Primer Tienda de Alquiler de Juegos de Mesa de la Ciudad'
+                        greeting='Hola soy ItemListContainer' 
                         titulo= { Titulo }
                     />} 
                 />              

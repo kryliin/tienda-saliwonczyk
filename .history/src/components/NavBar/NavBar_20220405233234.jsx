@@ -4,6 +4,7 @@ import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import CartWidget from './CartWidget'
+import NavLink from 'react-bootstrap/NavLink'
 
 export const NavBar = () => {
     return (
@@ -14,21 +15,15 @@ export const NavBar = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link to="../QuienesSomos/QuienesSomos.jsx">¿Quienes Somos?</Nav.Link>
-                            <Nav.Link to="../Faq/faq.jsx">F.A.Q</Nav.Link>
-                            <Nav.Link to="../Contacto/contacto.jsx">Contacto</Nav.Link>
-
-                            <Nav.Link to="/categoria/FAMILIAR">Familiar</Nav.Link>
-                            <Nav.Link to="/categoria/ESTRATEGIA">Estrategia</Nav.Link>
-                            <Nav.Link to="/categoria/CONOCIMIENTO">Preguntas y Respuestas</Nav.Link>
-                            <Nav.Link to="/categoria/INFANTIL">Infantiles</Nav.Link>
-
+                            <NavLink to={`/QuienesSomos`}>¿Quienes Somos?</NavLink>
+                            <NavLink to={`/Faq`}>F.A.Q</NavLink>
+                            <NavLink href="../Contacto/contacto.jsx">Contacto</NavLink>
                             <NavDropdown title="Juegos" id="collasible-nav-dropdown">
-                                <NavDropdown.Item to="/categoria/FAMILIAR">Familiar</NavDropdown.Item>
-                                <NavDropdown.Item to="/categoria/ACCION">Accion</NavDropdown.Item>
-                                <NavDropdown.Item to="/categoria/ESTRATEGIA">Estrategia</NavDropdown.Item>
-                                <NavDropdown.Item to="/categoria/CONOCIMIENTO">Preguntas y Respuestas</NavDropdown.Item>
-                                <NavDropdown.Item to="/categoria/INFANTIL">Infantiles</NavDropdown.Item>
+                                <NavDropdown.Item href="#">Arcade</NavDropdown.Item>
+                                <NavDropdown.Item href="#">Accion</NavDropdown.Item>
+                                <NavDropdown.Item href="#">Estrategia</NavDropdown.Item>
+                                <NavDropdown.Item href="#">Preguntas y Respuestas</NavDropdown.Item>
+                                <NavDropdown.Item href="#">Infantiles</NavDropdown.Item>
                                 <NavDropdown.Divider />
                                 <NavDropdown.Item href="../Juegos/Juegos.jsx">Ver Todos</NavDropdown.Item>
                             </NavDropdown>

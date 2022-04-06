@@ -42,7 +42,7 @@ const ItemDetailedConteiner = () => {
   );
 };
 
-
+export default ItemDetailedConteiner;
 export default ItemDetailedConteiner;
 
 

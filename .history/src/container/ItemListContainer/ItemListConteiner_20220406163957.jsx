@@ -31,11 +31,11 @@ function ItemListContainer({ greeting }) {
 
     return (
         <div>
-            {greeting}<hr />
             {loading ?
                 <h2>Tirando Dados...</h2>
                 :
-                <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>
+                <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+
                     <ItemList producto={producto} />
                 </div>
             }
