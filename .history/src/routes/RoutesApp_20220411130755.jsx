@@ -7,7 +7,6 @@ import ItemDetailedConteiner from '../container/ItemDetailsConteiner/ItemDetaile
 import Cart from '../components/Cart/Cart'
 import QuienesSomos from '../components/QuienesSomos/QuienesSomos'
 import CartContextProvider from '../context/CartContext'
-import Contacto from '../components/Contacto/Contacto'
 
 function RoutesApp() {
 
@@ -20,7 +19,7 @@ function RoutesApp() {
 
 
                     <Routes>
-
+                  
                         <Route
                             path="/categoria/:categoriaId"
                             element={<ItemListContainer
@@ -28,14 +27,14 @@ function RoutesApp() {
                                 titulo={Titulo}
                             />}
                         />
-                        <Route path="/detalle/:detalleId" element={<ItemDetailedConteiner />} />
+                        <Route path="/detalle/:detalleId" element={<ItemDetailedConteiner/>} />
                         <Route path="/faq" element={<Faq />} />
                         <Route path="/quines" element={<QuienesSomos />} />
                         <Route path="/cart" element={<Cart />} />
-                        <Route path="/contacto" element={<Contacto />} />
-                        <Route path="/*" element={<Navigate to='/' replace />} />
 
-                        <Route
+                      <Route path="/*" element={<Navigate to='/' replace />} />
+
+                      <Route
                             path="/"
                             element={<ItemListContainer
                                 titulo={Titulo}
@@ -43,7 +42,6 @@ function RoutesApp() {
 
                             />}
                         />
-
                     </Routes>
                 </CartContextProvider>
             </BrowserRouter>

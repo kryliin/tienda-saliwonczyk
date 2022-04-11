@@ -35,7 +35,7 @@ function ItemListContainer({ greeting }) {
             {loading ?
                 <h2>Tirando Dados...</h2>
                 :
-                <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }} className='col-md-4 p-1'>
+                <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }} className=''>
                     <ItemList producto={producto} />
                 </div>
             }

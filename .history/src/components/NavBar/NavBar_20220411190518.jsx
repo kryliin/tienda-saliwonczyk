@@ -9,7 +9,7 @@ import Faq from '../Faq/faq'
 import QuienesSomos from '../QuienesSomos/QuienesSomos'
 import ItemDetailedConteiner from '../../container/ItemDetailsConteiner/ItemDetailedConteiner'
 //import ItemListContainer from '../../container/ItemListContainer/ItemListConteiner'
-import Contacto from '../Contacto/Contacto'
+import Contacto from '../'
 
 export const NavBar = () => {
     return (
@@ -20,7 +20,7 @@ export const NavBar = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <NavLink className="btn btn-dark" to="/quines" element={<QuienesSomos />}>¿Quienes Somos?</NavLink>
+                            <NavLink className="btn btn-dark" to="/quienesSomos" element={<QuienesSomos />}>¿Quienes Somos?</NavLink>
                             <NavLink className="btn btn-dark" to="/faq" element={<Faq />}>F.A.Q</NavLink>
                             <NavLink className="btn btn-dark" to="/contacto" element={<Contacto />}>Contacto</NavLink>
                             <NavDropdown title="Juegos" id="collasible-nav-dropdown">

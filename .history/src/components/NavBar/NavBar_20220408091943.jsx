@@ -4,53 +4,46 @@ import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import CartWidget from './CartWidget'
-import { Link, NavLink } from 'react-router-dom'
-import Faq from '../Faq/faq'
-import QuienesSomos from '../QuienesSomos/QuienesSomos'
-import ItemDetailedConteiner from '../../container/ItemDetailsConteiner/ItemDetailedConteiner'
-//import ItemListContainer from '../../container/ItemListContainer/ItemListConteiner'
-import Contacto from '../Contacto/Contacto'
+import { NavLink } from 'react-router-dom'
 
 export const NavBar = () => {
     return (
         <>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand to="/">Alquiler Juegos</Navbar.Brand>
+                    <Navbar.Brand href="#home">Alquiler Juegos</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <NavLink className="btn btn-dark" to="/quines" element={<QuienesSomos />}>¿Quienes Somos?</NavLink>
-                            <NavLink className="btn btn-dark" to="/faq" element={<Faq />}>F.A.Q</NavLink>
-                            <NavLink className="btn btn-dark" to="/contacto" element={<Contacto />}>Contacto</NavLink>
+                            <NavLink to="../QuienesSomos/QuienesSomos.jsx">¿Quienes Somos?</NavLink>
+                            <NavLink to="../Faq/faq.jsx">F.A.Q</NavLink>
+                            <NavLink to="../Contacto/contacto.jsx">Contacto</NavLink>
                             <NavDropdown title="Juegos" id="collasible-nav-dropdown">
-
-                                <NavLink path="/detalle" element={<ItemDetailedConteiner />}>
+                                <NavLink to="/categoria/FAMILIAR">
                                     <NavDropdown.Item >Familiar</NavDropdown.Item>
                                 </NavLink>
-                                <NavLink path="/detalle" element={<ItemDetailedConteiner />}>
+                                <NavLink to="/categoria/ACCION">
                                     <NavDropdown.Item >Accion</NavDropdown.Item>
-                                </NavLink >
-                                <NavLink path="/detalle" element={<ItemDetailedConteiner />}>
+                                </NavLink>
+                                <NavLink to="/categoria/ESTRATEGIA">
                                     <NavDropdown.Item>Estrategia</NavDropdown.Item>
                                 </NavLink>
-                                <NavLink path="/detalle" element={<ItemDetailedConteiner />}>
+                                <NavLink to="/categoria/CONOCIMIENTO">
                                     <NavDropdown.Item >Preguntas y Respuestas</NavDropdown.Item>
                                 </NavLink>
-                                <NavLink path="/detalle" element={<ItemDetailedConteiner />}>
+                                <NavLink to="/categoria/INFANTIL">
                                     <NavDropdown.Item >Infantiles</NavDropdown.Item>
                                 </NavLink>
                                 <NavDropdown.Divider />
 
-                                <NavLink >
-                                    <NavDropdown.Item>Ver Todos</NavDropdown.Item>
+                                <NavLink to="../QuienesSomos/QuienesSomos.jsx">
+                                    <NavDropdown.Item href="../Juegos/Juegos.jsx">Ver Todos</NavDropdown.Item>
                                 </NavLink>
-
                             </NavDropdown>
                         </Nav>
                         <Nav>
-                            <Link className="btn btn-dark" to="/usuarios">Usuario</Link>
-                            <Link className="btn btn-dark" to="/cart"><CartWidget /></Link>
+                            <NavLink href="../Usuarios/Usuarios.jsx">Usuario</NavLink>
+                            <NavLink to="../Cart/Cart.jsx">Carrito</NavLink> <CartWidget />
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

@@ -21,7 +21,7 @@ const Item = ({ producto }) => {
     return (
         <div>
 
-            <div className="card border-primary shadow bg-white p-1" >
+            <div className="card mt-5 border-primary shadow bg-white md-3" >
                 <div className="card-header">
                     {`${producto.name} - ${producto.categoria}`}
                 </div>

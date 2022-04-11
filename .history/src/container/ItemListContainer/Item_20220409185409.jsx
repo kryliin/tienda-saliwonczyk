@@ -2,6 +2,7 @@ import React from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 import { useCartContext } from "../../context/CartContext"
 import { Link } from "react-router-dom"
+import Container from 'react-bootstrap/Container'
 
 const Item = ({ producto }) => {
 
@@ -13,15 +14,14 @@ const Item = ({ producto }) => {
 
     function onAdd(cant) {
         console.log(cant)
-        console.log(producto)
         addToCart( { ...producto, cantidad: cant } )
       }
 
 
     return (
-        <div>
+        <Container className="md-3" fluid>
 
-            <div className="card border-primary shadow bg-white p-1" >
+            <div className="card mt-5 border-primary shadow bg-white md-3" >
                 <div className="card-header">
                     {`${producto.name} - ${producto.categoria}`}
                 </div>
@@ -50,7 +50,7 @@ const Item = ({ producto }) => {
                     />
                 </div>
             </div>
-        </div>
+        </Container>
     );
 };
 

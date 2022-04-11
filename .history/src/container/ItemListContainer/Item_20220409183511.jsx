@@ -13,22 +13,21 @@ const Item = ({ producto }) => {
 
     function onAdd(cant) {
         console.log(cant)
-        console.log(producto)
         addToCart( { ...producto, cantidad: cant } )
       }
 
 
     return (
-        <div>
+        <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
 
-            <div className="card border-primary shadow bg-white p-1" >
+            <div className="card mt-5 border border-primary shadow md-5 bg-white" >
                 <div className="card-header">
                     {`${producto.name} - ${producto.categoria}`}
                 </div>
 
                 <div className="card-body">
 
-                    <img src={producto.foto} alt='' className='w-25 h-auto d-inline-block' />
+                    <img src={producto.foto} alt='' className='w-25 h-auto d-inline-block' fluid />
 
                     <Link to={`/detalle/${producto.id}`}>
                         <button className="btn btn-outline-primary btn-block">

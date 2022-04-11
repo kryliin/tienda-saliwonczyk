@@ -15,9 +15,7 @@ function Cart() {
     <Container fluid>
       <h1>Mis Compras</h1>
       <Row>
-        <Col md={{ span: 6, offset: 3 }}> 
-        {cartList.map(producto => <li key={producto.id} > nombre: {producto.name} - cantidad: {producto.cantidad} </li>)}
-        </Col>
+        <Col md={{ span: 6, offset: 3 }}> {cartList.map(producto => <li key={producto.id} > nombre: {producto.name} - cantidad: {producto.cantidad} </li>)}</Col>
       </Row>
       <button className="btn btn-danger" onClick={removeCart}>Vaciar Carrito</button>
     </Container>

@@ -4,12 +4,11 @@ import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import CartWidget from './CartWidget'
-import { Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Faq from '../Faq/faq'
 import QuienesSomos from '../QuienesSomos/QuienesSomos'
 import ItemDetailedConteiner from '../../container/ItemDetailsConteiner/ItemDetailedConteiner'
 //import ItemListContainer from '../../container/ItemListContainer/ItemListConteiner'
-import Contacto from '../Contacto/Contacto'
 
 export const NavBar = () => {
     return (
@@ -20,31 +19,31 @@ export const NavBar = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <NavLink className="btn btn-dark" to="/quines" element={<QuienesSomos />}>¿Quienes Somos?</NavLink>
-                            <NavLink className="btn btn-dark" to="/faq" element={<Faq />}>F.A.Q</NavLink>
-                            <NavLink className="btn btn-dark" to="/contacto" element={<Contacto />}>Contacto</NavLink>
+                            <Link className="btn btn-dark" to="/quienesSomos" element={<QuienesSomos />}>¿Quienes Somos?</Link>
+                            <Link className="btn btn-dark" to="/faq" element={<Faq />}>F.A.Q</Link>
+                            <Link className="btn btn-dark" to="/contacto">Contacto</Link>
                             <NavDropdown title="Juegos" id="collasible-nav-dropdown">
 
-                                <NavLink path="/detalle" element={<ItemDetailedConteiner />}>
+                                <Link path="/detalle/:Familiar" element={<ItemDetailedConteiner />}>
                                     <NavDropdown.Item >Familiar</NavDropdown.Item>
-                                </NavLink>
-                                <NavLink path="/detalle" element={<ItemDetailedConteiner />}>
+                                </Link>
+                                <Link path="/detalle/:Accion" element={<ItemDetailedConteiner />}>
                                     <NavDropdown.Item >Accion</NavDropdown.Item>
-                                </NavLink >
-                                <NavLink path="/detalle" element={<ItemDetailedConteiner />}>
+                                </Link >
+                                <Link path="/detalle/:Estrategia" element={<ItemDetailedConteiner />}>
                                     <NavDropdown.Item>Estrategia</NavDropdown.Item>
-                                </NavLink>
-                                <NavLink path="/detalle" element={<ItemDetailedConteiner />}>
+                                </Link>
+                                <Link path="/detalle/:Preguntas y Respuestas" element={<ItemDetailedConteiner />}>
                                     <NavDropdown.Item >Preguntas y Respuestas</NavDropdown.Item>
-                                </NavLink>
-                                <NavLink path="/detalle" element={<ItemDetailedConteiner />}>
+                                </Link>
+                                <Link path="/detalle/:Infantiles" element={<ItemDetailedConteiner />}>
                                     <NavDropdown.Item >Infantiles</NavDropdown.Item>
-                                </NavLink>
+                                </Link>
                                 <NavDropdown.Divider />
 
-                                <NavLink >
+                                <Link >
                                     <NavDropdown.Item>Ver Todos</NavDropdown.Item>
-                                </NavLink>
+                                </Link>
 
                             </NavDropdown>
                         </Nav>
