@@ -15,7 +15,7 @@ function Cart() {
       <Row>
         <Col md={{ span: 6, offset: 3 }}> 
         {cartList.map(producto => <li key={producto.id} > nombre: {producto.name} - cantidad: {producto.cantidad} </li>)} 
-        
+        const doubled = {cartList.map((producto) => producto.precio * producto.cantidad)} 
         </Col>
       </Row>
  

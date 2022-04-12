@@ -26,6 +26,7 @@ function CartContextProvider({ children }) { //componente
 
 
     return (
+
         <CartContext.Provider value={{
             cartList,
             addToCart,

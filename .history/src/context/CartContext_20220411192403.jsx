@@ -13,7 +13,7 @@ function CartContextProvider({ children }) { //componente
 
 
     const addToCart = (item) => {
-        console.log('item' + item)
+        console.log(item)
         setCartList([
             ...cartList,
             item
@@ -26,6 +26,7 @@ function CartContextProvider({ children }) { //componente
 
 
     return (
+
         <CartContext.Provider value={{
             cartList,
             addToCart,

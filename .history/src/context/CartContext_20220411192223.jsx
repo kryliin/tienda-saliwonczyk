@@ -9,11 +9,12 @@ export const useCartContext = () => useContext(CartContext)
 function CartContextProvider({ children }) { //componente
     const [cartList, setCartList] = useState([])
 
-    console.log('cartList' +cartList)
-
+    console.log(cartList)
+    console.log(setCartList)
+    console.log(children)
 
     const addToCart = (item) => {
-        console.log('item' + item)
+        console.log(item)
         setCartList([
             ...cartList,
             item
@@ -26,6 +27,7 @@ function CartContextProvider({ children }) { //componente
 
 
     return (
+
         <CartContext.Provider value={{
             cartList,
             addToCart,
