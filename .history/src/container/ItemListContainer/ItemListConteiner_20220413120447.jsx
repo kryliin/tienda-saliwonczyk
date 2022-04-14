@@ -1,9 +1,11 @@
 import ItemList from './ItemList'
 import React, { useState, useEffect } from "react";
+import { useParams } from 'react-router-dom'
 import { collection, doc, getDoc, getDocs, getFirestore, limit, query, where } from 'firebase/firestore'
 
 function ItemListContainer({ greeting }) {
     const [productos, setProductos] = useState([])
+    const [producto] = useState({})
     const [loading, setLoading] = useState(true)
     const [bool, setBool] = useState(true)
     //const [items, setItems] = useState([])
@@ -13,7 +15,7 @@ function ItemListContainer({ greeting }) {
         const querydb = getFirestore() 
         const queryCollection = collection(querydb, 'Juegos')
         const queryFilter = query(queryCollection, 
-          //  where('categoria','==', 'Estrategia'),            
+            where('categoria','==', 'estrategia'),            
             limit(10)
         )
 
@@ -25,10 +27,10 @@ function ItemListContainer({ greeting }) {
 
 
  //ejemplo de evento
-/*  const handleClick=(e)=>{
+ const handleClick=(e)=>{
     e.preventDefault() 
     setBool(!bool)
-} */
+}
 
 const handleAgregar=()=>{
     setProductos([
@@ -42,12 +44,13 @@ console.log('producto' + productos)
     return (
         <div>
             {greeting}<hr />
-        {/*     <button onClick={handleClick}>Cambiar estado </button>            */}
+            <button onClick={handleClick}>Cambiar estado </button>           
             <button onClick={handleAgregar}>Agregar Item </button>
             {loading ?
                 <h2>Tirando Dados...</h2>
                 :
-                <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+               
+                <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }} className='col-md-4 p-1'>
                     <ItemList productos={productos} />
                 </div>
             }

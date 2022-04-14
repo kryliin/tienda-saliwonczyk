@@ -5,9 +5,10 @@ import Col from 'react-bootstrap/Col'
 import { addDoc, collection, doc, documentId, getDocs, getFirestore, query, updateDoc, where, writeBatch } from 'firebase/firestore'
 
 
+
 function Cart() {
 
-  const { cartList, removeCart, totalAPagar } = useCartContext()
+  const { cartList, removeCart } = useCartContext()
 
   const generarOrden = async (e) => {
     e.preventDefault();
@@ -15,13 +16,13 @@ function Cart() {
         // Nuevo objeto de orders    
         let orden = {}      
     
-        orden.buyer = { name: 'Christian', email: 'kryliin@gmail.com', phone: '099419799' }
-        orden.total = totalAPagar()
+        orden.buyer = { name: 'Federico', email: 'f@gmail.com', phone: '023456987' }
+        orden.total = precioTotal()
     
         orden.items = cartList.map(cartItem => {
             const id = cartItem.id
-            const nombre = cartItem.nombre
-            const precio = cartItem.precio * cartItem.cantidad
+            const nombre = cartItem.name
+            const precio = cartItem.price * cartItem.cantidad
             // const cantidad = cartItem.cantidad
             
             return {id, nombre, precio}   
@@ -32,10 +33,22 @@ function Cart() {
         const queryCollection = collection(db, 'orders')
         await addDoc(queryCollection, orden)
         .then(({id}) => console.log( id ))
+        // .catch
+        // .finally
 
+        // update, modificar un archivo 
+
+        // const queryUpdate =  doc(db, 'productos', '4jNlWgWGlGSO7WGASegG')
+        // updateDoc(queryUpdate, {
+        //     stock : 100
+        // })
+        // .then(resp => console.log('actualizado'))
+
+
+        // console.log(orden)
 
         // actualizar el stock
-        const queryCollectionStock = collection(db, 'Juegos')
+        const queryCollectionStock = collection(db, 'productos')
 
         const queryActulizarStock = await query(
             queryCollectionStock, //                   ['jlksjfdgl','asljdfks'] -> ejemplo del map ,  
@@ -56,14 +69,12 @@ function Cart() {
   return (
     <Container fluid>
       <h1>Mis Compras</h1>
-
       <Row>
         <Col md={{ span: 6, offset: 3 }}> 
-        <h3>{cartList.map(producto => <li key={producto.id} > {producto.nombre} - Cantidad: {producto.cantidad}  ${producto.precio*producto.cantidad}</li>)} </h3>
+        {cartList.map(producto => <li key={producto.id} > nombre: {producto.name} - cantidad: {producto.cantidad} </li>)} 
         </Col>
       </Row>
-      <h2>TOTAL $ {totalAPagar}</h2>
-   {/* formulario */}
+ 
       <button className="btn btn-danger" onClick={removeCart}>Vaciar Carrito</button>
       <button className="btn btn-susses" onClick={generarOrden}>Generar orden</button>
     </Container>

@@ -16,7 +16,7 @@ export const NavBar = () => {
         <>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
-                    <NavLink className="btn btn-dark" to="/" lement={<ItemListContainer />}>Alquiler Juegos</NavLink>
+                    <NavLink to="/" lement={<ItemListContainer />}>Alquiler Juegos</NavLink>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">

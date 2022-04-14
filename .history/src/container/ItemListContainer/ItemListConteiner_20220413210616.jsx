@@ -13,7 +13,7 @@ function ItemListContainer({ greeting }) {
         const querydb = getFirestore() 
         const queryCollection = collection(querydb, 'Juegos')
         const queryFilter = query(queryCollection, 
-          //  where('categoria','==', 'Estrategia'),            
+            where('categoria','==', 'Estrategia'),            
             limit(10)
         )
 
@@ -47,7 +47,7 @@ console.log('producto' + productos)
             {loading ?
                 <h2>Tirando Dados...</h2>
                 :
-                <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+                <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }} className='col-md-4 p-1'>
                     <ItemList productos={productos} />
                 </div>
             }

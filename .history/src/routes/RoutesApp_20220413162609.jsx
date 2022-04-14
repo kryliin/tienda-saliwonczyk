@@ -37,6 +37,7 @@ function RoutesApp() {
                             element={<ItemListContainer
                                 titulo={Titulo}
                                 greeting='Bienvenidos a la Primer Tienda de Alquiler de Juegos de Mesa de la Ciudad'
+
                             />}
                         />
                     </Routes>

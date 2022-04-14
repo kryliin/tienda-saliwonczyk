@@ -1,20 +1,26 @@
 import ItemList from './ItemList'
 import React, { useState, useEffect } from "react";
+import { useParams } from 'react-router-dom'
 import { collection, doc, getDoc, getDocs, getFirestore, limit, query, where } from 'firebase/firestore'
 
 function ItemListContainer({ greeting }) {
     const [productos, setProductos] = useState([])
+    const [producto, setProducto] = useState({})
     const [loading, setLoading] = useState(true)
     const [bool, setBool] = useState(true)
     //const [items, setItems] = useState([])
 
+    // hook de react router dom
+    const { categoriaId } = useParams()
 
     useEffect(()=>{
         const querydb = getFirestore() 
-        const queryCollection = collection(querydb, 'Juegos')
+        const queryCollection = collection(querydb, 'juegos')
         const queryFilter = query(queryCollection, 
-          //  where('categoria','==', 'Estrategia'),            
-            limit(10)
+            // where('price','>=', 1500)
+            where('categoria','==', 'estrategia'),            
+            limit(1)
+            // orderBy('name', 'asc')
         )
 
         getDocs(queryFilter)
@@ -25,30 +31,29 @@ function ItemListContainer({ greeting }) {
 
 
  //ejemplo de evento
-/*  const handleClick=(e)=>{
+ const handleClick=(e)=>{
     e.preventDefault() 
     setBool(!bool)
-} */
+}
 
 const handleAgregar=()=>{
     setProductos([
         ...productos,
-        { id: '10', descripcion: 'El Erudito es un juego de mesa de preguntas en donde no gana el que más sabe sino el que mejor razona. Es ideal para jugar en equipos. Un juego de mesa que combina ingenio, cultura general y apuestas en más de mil consignas. Según el casillero, se apostará un monto y se deberá responder una de las tarjetas. Una de las características más particulares de este juego de mesa es que las preguntas en vez de estar agrupadas de manera clásica por área: espectáculos, deporte, historia, etc. están agrupadas por formato de pregunta: Secuencia, En común, Asociación y Aproximación. ', categoria: 'FAMILIAR', compania: "MALDON", name: "El Erudito", cantidad: 16, price: 3200, foto: "./Imagenes/elerudito.jpeg" },
+        { id: "8", name: "Gorra 7", url: 'https://www.remerasya.com/pub/media/catalog/product/cache/e4d64343b1bc593f1c5348fe05efa4a6/r/e/remera_negra_lisa.jpg', categoria: "remera" , price: 2 }
     ])
 }
 
-console.log('producto' + productos)
 
     return (
         <div>
             {greeting}<hr />
-        {/*     <button onClick={handleClick}>Cambiar estado </button>            */}
+            <button onClick={handleClick}>Cambiar estado </button>           
             <button onClick={handleAgregar}>Agregar Item </button>
             {loading ?
                 <h2>Tirando Dados...</h2>
                 :
-                <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-                    <ItemList productos={productos} />
+                <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }} className='col-md-4 p-1'>
+                    <ItemList producto={producto} />
                 </div>
             }
         </div>

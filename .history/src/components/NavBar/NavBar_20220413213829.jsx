@@ -16,7 +16,7 @@ export const NavBar = () => {
         <>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
-                    <NavLink className="btn btn-dark" to="/" lement={<ItemListContainer />}>Alquiler Juegos</NavLink>
+                    <Navbar.Brand to="/">Alquiler Juegos</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
@@ -26,19 +26,19 @@ export const NavBar = () => {
                           
                             <NavDropdown title="Juegos" id="collasible-nav-dropdown">
 
-                                <NavLink to="/detalle/:detalleId" element={<ItemDetailedConteiner detalleID={'Familiar'}/>}>
+                                <NavLink to="/detalle/:detalleId" element={<ItemDetailedConteiner />}>
                                     <NavDropdown.Item >Familiar</NavDropdown.Item>
                                 </NavLink>
-                                <NavLink to="/detalle/:detalleId" element={<ItemDetailedConteiner detalleID={'Accion'}/>}>
+                                <NavLink to="/detalle/:detalleId" element={<ItemDetailedConteiner />}>
                                     <NavDropdown.Item >Accion</NavDropdown.Item>
                                 </NavLink >
-                                <NavLink to="/detalle/:detalleId" element={<ItemDetailedConteiner detalleID={'Estrategia'}/>}>
+                                <NavLink to="/detalle/:detalleId" element={<ItemDetailedConteiner />}>
                                     <NavDropdown.Item>Estrategia</NavDropdown.Item>
                                 </NavLink>
-                                <NavLink to="/detalle/:detalleId" element={<ItemDetailedConteiner detalleID={'Preguntas y Respuestas'}/>}>
+                                <NavLink to="/detalle/:detalleId" element={<ItemDetailedConteiner />}>
                                     <NavDropdown.Item >Preguntas y Respuestas</NavDropdown.Item>
                                 </NavLink>
-                                <NavLink to="/detalle/:detalleId" element={<ItemDetailedConteiner detalleID={'Infantiles'}/>}>
+                                <NavLink to="/detalle/:detalleId" element={<ItemDetailedConteiner />}>
                                     <NavDropdown.Item >Infantiles</NavDropdown.Item>
                                 </NavLink>
                                 <NavDropdown.Divider />

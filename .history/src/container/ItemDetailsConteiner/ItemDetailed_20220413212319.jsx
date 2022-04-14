@@ -19,9 +19,8 @@ function ItemDetailed({ producto }) {
 
   return (
     <>
-
       <div>
-        <div className="d-flex justify-content-around" >
+        <div className="card border-primary shadow bg-white p-1" >
           <div className="card-header">
             {`${producto.nombre} - ${producto.categoria}`}
           </div>

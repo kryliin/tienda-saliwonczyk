@@ -20,6 +20,12 @@ function ItemDetailed({ producto }) {
   return (
     <>
 
+
+
+
+
+
+    
       <div>
         <div className="d-flex justify-content-around" >
           <div className="card-header">

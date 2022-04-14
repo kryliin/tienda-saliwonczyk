@@ -1,9 +1,11 @@
 import ItemList from './ItemList'
 import React, { useState, useEffect } from "react";
+import { useParams } from 'react-router-dom'
 import { collection, doc, getDoc, getDocs, getFirestore, limit, query, where } from 'firebase/firestore'
 
 function ItemListContainer({ greeting }) {
     const [productos, setProductos] = useState([])
+    const [producto] = useState({})
     const [loading, setLoading] = useState(true)
     const [bool, setBool] = useState(true)
     //const [items, setItems] = useState([])
@@ -11,10 +13,12 @@ function ItemListContainer({ greeting }) {
 
     useEffect(()=>{
         const querydb = getFirestore() 
-        const queryCollection = collection(querydb, 'Juegos')
+        const queryCollection = collection(querydb, 'juegos')
         const queryFilter = query(queryCollection, 
-          //  where('categoria','==', 'Estrategia'),            
-            limit(10)
+            // where('price','>=', 1500)
+            where('categoria','==', 'estrategia'),            
+            limit(1)
+            // orderBy('name', 'asc')
         )
 
         getDocs(queryFilter)
@@ -25,10 +29,10 @@ function ItemListContainer({ greeting }) {
 
 
  //ejemplo de evento
-/*  const handleClick=(e)=>{
+ const handleClick=(e)=>{
     e.preventDefault() 
     setBool(!bool)
-} */
+}
 
 const handleAgregar=()=>{
     setProductos([
@@ -37,18 +41,19 @@ const handleAgregar=()=>{
     ])
 }
 
-console.log('producto' + productos)
-
+console.log(producto)
     return (
         <div>
             {greeting}<hr />
-        {/*     <button onClick={handleClick}>Cambiar estado </button>            */}
+            <button onClick={handleClick}>Cambiar estado </button>           
             <button onClick={handleAgregar}>Agregar Item </button>
             {loading ?
                 <h2>Tirando Dados...</h2>
                 :
-                <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-                    <ItemList productos={productos} />
+               
+                <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }} className='col-md-4 p-1'>
+                   
+                    <ItemList producto={producto} />
                 </div>
             }
         </div>

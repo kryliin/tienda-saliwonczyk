@@ -6,7 +6,7 @@ function App() {
   
     
     return (
-        <div   className="App border border-3 border-success">
+        <div className="App">
             <RoutesApp />
         </div>
   )

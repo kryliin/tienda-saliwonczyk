@@ -8,7 +8,7 @@ import { Link, NavLink } from 'react-router-dom'
 import Faq from '../Faq/faq'
 import QuienesSomos from '../QuienesSomos/QuienesSomos'
 import ItemDetailedConteiner from '../../container/ItemDetailsConteiner/ItemDetailedConteiner'
-import ItemListContainer from '../../container/ItemListContainer/ItemListConteiner'
+//import ItemListContainer from '../../container/ItemListContainer/ItemListConteiner'
 import Contacto from '../Contacto/Contacto'
 
 export const NavBar = () => {
@@ -16,7 +16,7 @@ export const NavBar = () => {
         <>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
-                    <NavLink className="btn btn-dark" to="/" lement={<ItemListContainer />}>Alquiler Juegos</NavLink>
+                    <Navbar.Brand to="/">Alquiler Juegos</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
@@ -26,25 +26,24 @@ export const NavBar = () => {
                           
                             <NavDropdown title="Juegos" id="collasible-nav-dropdown">
 
-                                <NavLink to="/detalle/:detalleId" element={<ItemDetailedConteiner detalleID={'Familiar'}/>}>
+                                <NavLink path="/detalle/:detalleId" element={<ItemDetailedConteiner />}>
                                     <NavDropdown.Item >Familiar</NavDropdown.Item>
                                 </NavLink>
-                                <NavLink to="/detalle/:detalleId" element={<ItemDetailedConteiner detalleID={'Accion'}/>}>
+                                <NavLink path="/detalle/:detalleId" element={<ItemDetailedConteiner />}>
                                     <NavDropdown.Item >Accion</NavDropdown.Item>
                                 </NavLink >
-                                <NavLink to="/detalle/:detalleId" element={<ItemDetailedConteiner detalleID={'Estrategia'}/>}>
+                                <NavLink path="/detalle/:detalleId" element={<ItemDetailedConteiner />}>
                                     <NavDropdown.Item>Estrategia</NavDropdown.Item>
                                 </NavLink>
-                                <NavLink to="/detalle/:detalleId" element={<ItemDetailedConteiner detalleID={'Preguntas y Respuestas'}/>}>
+                                <NavLink path="/detalle/:detalleId" element={<ItemDetailedConteiner />}>
                                     <NavDropdown.Item >Preguntas y Respuestas</NavDropdown.Item>
                                 </NavLink>
-                                <NavLink to="/detalle/:detalleId" element={<ItemDetailedConteiner detalleID={'Infantiles'}/>}>
+                                <NavLink path="/detalle/:detalleId" element={<ItemDetailedConteiner />}>
                                     <NavDropdown.Item >Infantiles</NavDropdown.Item>
                                 </NavLink>
                                 <NavDropdown.Divider />
 
-                            
-                                <NavLink to="/" element={<ItemListContainer />}>
+                                <NavLink >
                                     <NavDropdown.Item>Ver Todos</NavDropdown.Item>
                                 </NavLink>
 

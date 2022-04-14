@@ -5,9 +5,10 @@ import Col from 'react-bootstrap/Col'
 import { addDoc, collection, doc, documentId, getDocs, getFirestore, query, updateDoc, where, writeBatch } from 'firebase/firestore'
 
 
+
 function Cart() {
 
-  const { cartList, removeCart, totalAPagar } = useCartContext()
+  const { cartList, removeCart, precioTotal } = useCartContext()
 
   const generarOrden = async (e) => {
     e.preventDefault();
@@ -16,7 +17,7 @@ function Cart() {
         let orden = {}      
     
         orden.buyer = { name: 'Christian', email: 'kryliin@gmail.com', phone: '099419799' }
-        orden.total = totalAPagar()
+        orden.total = precioTotal()
     
         orden.items = cartList.map(cartItem => {
             const id = cartItem.id
@@ -56,13 +57,12 @@ function Cart() {
   return (
     <Container fluid>
       <h1>Mis Compras</h1>
-
       <Row>
         <Col md={{ span: 6, offset: 3 }}> 
         <h3>{cartList.map(producto => <li key={producto.id} > {producto.nombre} - Cantidad: {producto.cantidad}  ${producto.precio*producto.cantidad}</li>)} </h3>
         </Col>
       </Row>
-      <h2>TOTAL $ {totalAPagar}</h2>
+      <h2>{precioTotal}</h2>
    {/* formulario */}
       <button className="btn btn-danger" onClick={removeCart}>Vaciar Carrito</button>
       <button className="btn btn-susses" onClick={generarOrden}>Generar orden</button>

@@ -1,38 +1,35 @@
 
 import React, { useState, useEffect } from "react";
 import ItemDetailed from './ItemDetailed'
-import { query, getDocs, getFirestore, limit, where, collection } from 'firebase/firestore'
+import { doc, getDoc, getFirestore } from 'firebase/firestore'
 
 
 const ItemDetailedConteiner = (detalleId) => {
   const [producto, setProducto] = useState({})
   const [loading, setLoading] = useState(true)
 
-  console.log('detalleId' + detalleId)
-  
+
   useEffect(() => {
     const querydb = getFirestore()
-    // const queryProd = doc(querydb, 'Juegos', 'EPkhNStbu0lyHZyPABD0')
-    const queryCollection = collection(querydb, 'Juegos')
-    const queryFilter = query(queryCollection,
-      where('categoria', '==', detalleId),
-      limit(10)
-    )
+    const queryProd = doc(querydb, 'Juegos', 'EPkhNStbu0lyHZyPABD0')
 
-    getDocs(queryFilter)
-      .then(resp => setProducto(resp.docs.map(item => ({ id: item.id, ...item.data() }))))
+    getDoc(queryProd)
+      .then(resp => setProducto({ id: resp.id, ...resp.data() }))
       .catch(err => console.log(err))
       .finally(() => setLoading(false))
   }, [detalleId])
 
   console.log(detalleId)
   return (
-    <div className="border border-3 border-primary">
-      {loading ?
-        <h2>Tirando Dados...</h2> :
+    <div>
+      <div className="border border-3 border-primary">
+        {loading ?
+          <h2>Tirando Dados...</h2>
+          :
+          <ItemDetailed producto={producto} />
+        }
+      </div>
 
-        <ItemDetailed producto={producto} />
-      }
     </div>
   );
 };

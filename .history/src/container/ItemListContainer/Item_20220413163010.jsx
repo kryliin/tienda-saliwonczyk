@@ -18,7 +18,7 @@ const Item = ({ productos }) => {
         <div>
             <div className="card border-primary shadow bg-white p-1" >
                 <div className="card-header">
-                    {`${productos.nombre} - ${productos.categoria}`}
+                    {`${productos.name} - ${productos.categoria}`}
                 </div>
 
                 <div className="card-body">
@@ -33,7 +33,7 @@ const Item = ({ productos }) => {
 
                     <br />
                     <br />
-                    <h4 style={{ color: 'green' }}>${productos.precio}</h4>
+                    <h4 style={{ color: 'green' }}>${productos.price}</h4>
                     <h4>Stock Disponible : {productos.cantidad}</h4>
                 </div>
                 <br />

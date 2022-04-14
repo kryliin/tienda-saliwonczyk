@@ -19,9 +19,8 @@ function ItemDetailed({ producto }) {
 
   return (
     <>
-
       <div>
-        <div className="d-flex justify-content-around" >
+        <div className="card border-primary shadow bg-white p-1" >
           <div className="card-header">
             {`${producto.nombre} - ${producto.categoria}`}
           </div>
@@ -36,7 +35,7 @@ function ItemDetailed({ producto }) {
             <br />
             <br />
             <h4 style={{ color: 'green' }}>${producto.precio}</h4>
-            <h4>Nos Quedan : {producto.cantidad}</h4>
+            <h4>Stock Disponible : {producto.cantidad}</h4>
           </div>
           <br />
           <div className="card-footer">
