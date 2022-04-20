@@ -7,15 +7,14 @@ const Item = ({ productos }) => {
     return (
 
         <div className='col-md-3 p-2'>
-            <div className="card w-100 h-100 mt-5" >
+            <div className="card bg-dark text-white w-100 mt-5" >
                 <div className="card-header">
-                   <h3>{`${productos.nombre} - ${productos.categoria}`}</h3> 
+                    {`${productos.nombre} - ${productos.categoria}`}
                 </div>
 
                 <div className="card-body">
 
                     <img src={productos.foto} alt='' className='w-50' />
-                    <br/>
                     <br/>
                     <h4 style={{ color: 'green' }}>${productos.precio}</h4>
                     <h4>Stock Disponible : {productos.cantidad}</h4>

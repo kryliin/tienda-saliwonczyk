@@ -26,10 +26,8 @@ function CartContextProvider({ children }) { //componente
 
     const totalAPagar = () => {
         let total = 0;
-        cartList.forEach((item) => (total += item.precio * item.cantidad));
-        console.log('total' + total);
+        cartList.forEach((item) => (total += item.item.precio * item.cantidad));
         return total;
-        
     };
 
     const cantidadTotalItem = () => {

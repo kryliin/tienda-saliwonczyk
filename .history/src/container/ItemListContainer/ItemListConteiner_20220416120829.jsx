@@ -30,12 +30,12 @@ function ItemListContainer({ greeting }) {
     setBool(!bool)
 } */
 
-/* const handleAgregar=()=>{
+const handleAgregar=()=>{
     setProductos([
         ...productos,
         { id: '10', descripcion: 'El Erudit. ', categoria: 'FAMILIAR', compania: "MALDON", name: "El Erudito", cantidad: 16, price: 3200, foto: "./Imagenes/elerudito.jpeg" },
     ])
-} */
+}
 
 console.log('producto' + productos)
 
@@ -43,7 +43,7 @@ console.log('producto' + productos)
         <div>
             {greeting}<hr />
         {/*     <button onClick={handleClick}>Cambiar estado </button>            */}
-      {/*  <button onClick={handleAgregar}>Agregar Item </button> */}
+            <button onClick={handleAgregar}>Agregar Item </button>
             {loading ?
                 <h2>Tirando Dados...</h2>
                 :

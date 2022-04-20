@@ -13,7 +13,7 @@ import Footer from '../components/Footer/Footer'
 function RoutesApp() {
 
     return (
-        <>
+        <div style={{background-color:'yellow'}}>
             <BrowserRouter>
                 <CartContextProvider>
                     <NavBar />
@@ -45,7 +45,7 @@ function RoutesApp() {
                 </CartContextProvider>
                 <Footer/>
             </BrowserRouter>
-        </>
+        </div>
     )
 }
 

@@ -17,7 +17,7 @@ function ItemDetailed({ productos }) {
   return (
     <>
       <div className='col-md-3 p-2'>
-        <div className="card w-100 mt-5 " >
+        <div className="card w-100 mt-5" >
           <div className="card-header">
             {`${productos.nombre} - ${productos.categoria}`}
           </div>

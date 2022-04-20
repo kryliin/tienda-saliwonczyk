@@ -9,7 +9,7 @@ const Item = ({ productos }) => {
         <div className='col-md-3 p-2'>
             <div className="card w-100 h-100 mt-5" >
                 <div className="card-header">
-                   <h3>{`${productos.nombre} - ${productos.categoria}`}</h3> 
+                    {`${productos.nombre} - ${productos.categoria}`}
                 </div>
 
                 <div className="card-body">

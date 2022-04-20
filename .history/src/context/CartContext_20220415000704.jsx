@@ -9,7 +9,7 @@ export const useCartContext = () => useContext(CartContext)
 function CartContextProvider({ children }) { //componente
     const [cartList, setCartList] = useState([])
 
-    console.log('cartList' + cartList)
+    console.log('cartList' +cartList)
 
 
     const addToCart = (item) => {
@@ -26,21 +26,13 @@ function CartContextProvider({ children }) { //componente
 
     const totalAPagar = () => {
         let total = 0;
-        cartList.forEach((item) => (total += item.precio * item.cantidad));
-        console.log('total' + total);
+        cartList.forEach((item) => (total += item.item.precio * item.cantidad));
         return total;
-        
-    };
-
-    const cantidadTotalItem = () => {
-        let total = 0;
-        if (cartList.size > 0) {
-            total = cartList.size;
-        } else {
-            total = 0
-        }
-        return total;
-    };
+      };
+    
+      const cantidadTotalItem = () => {
+       return cartList?.size();
+      };
 
 
     return (
@@ -51,7 +43,7 @@ function CartContextProvider({ children }) { //componente
             totalAPagar,
             cantidadTotalItem
         }}>
-
+        
             {children}
         </CartContext.Provider>
     )

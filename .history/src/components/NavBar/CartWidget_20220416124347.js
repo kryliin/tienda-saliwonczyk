@@ -1,5 +1,5 @@
 import React from "react";
-import IconoCarrito from '../logos/carrito.png'
+import IconoCarrito from './logos/carrito.png'
 import Image from 'react-bootstrap/Image'
 
 function CartWidget({name}) {

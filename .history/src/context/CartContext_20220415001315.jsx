@@ -26,7 +26,7 @@ function CartContextProvider({ children }) { //componente
 
     const totalAPagar = () => {
         let total = 0;
-        cartList.forEach((item) => (total += item.precio * item.cantidad));
+        cartList.forEach((item) => (total += item.item.precio * item.cantidad));
         console.log('total' + total);
         return total;
         

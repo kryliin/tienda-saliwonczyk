@@ -40,10 +40,9 @@ function RoutesApp() {
                                 greeting='Bienvenidos a la Primer Tienda de Alquiler de Juegos de Mesa de la Ciudad'
                             />}
                         />
-                      
+                        <Footer/>
                     </Routes>
                 </CartContextProvider>
-                <Footer/>
             </BrowserRouter>
         </>
     )

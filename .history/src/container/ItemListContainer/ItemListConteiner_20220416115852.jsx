@@ -30,12 +30,12 @@ function ItemListContainer({ greeting }) {
     setBool(!bool)
 } */
 
-/* const handleAgregar=()=>{
+const handleAgregar=()=>{
     setProductos([
         ...productos,
-        { id: '10', descripcion: 'El Erudit. ', categoria: 'FAMILIAR', compania: "MALDON", name: "El Erudito", cantidad: 16, price: 3200, foto: "./Imagenes/elerudito.jpeg" },
+        { id: '10', descripcion: 'El Erudito es un juego de mesa de preguntas en donde no gana el que más sabe sino el que mejor razona. Es ideal para jugar en equipos. Un juego de mesa que combina ingenio, cultura general y apuestas en más de mil consignas. Según el casillero, se apostará un monto y se deberá responder una de las tarjetas. Una de las características más particulares de este juego de mesa es que las preguntas en vez de estar agrupadas de manera clásica por área: espectáculos, deporte, historia, etc. están agrupadas por formato de pregunta: Secuencia, En común, Asociación y Aproximación. ', categoria: 'FAMILIAR', compania: "MALDON", name: "El Erudito", cantidad: 16, price: 3200, foto: "./Imagenes/elerudito.jpeg" },
     ])
-} */
+}
 
 console.log('producto' + productos)
 
@@ -43,7 +43,7 @@ console.log('producto' + productos)
         <div>
             {greeting}<hr />
         {/*     <button onClick={handleClick}>Cambiar estado </button>            */}
-      {/*  <button onClick={handleAgregar}>Agregar Item </button> */}
+            <button onClick={handleAgregar}>Agregar Item </button>
             {loading ?
                 <h2>Tirando Dados...</h2>
                 :

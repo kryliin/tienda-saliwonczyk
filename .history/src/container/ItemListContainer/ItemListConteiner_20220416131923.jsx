@@ -40,7 +40,7 @@ function ItemListContainer({ greeting }) {
 console.log('producto' + productos)
 
     return (
-        <div>
+        <div style={{color:'yellow'}}>
             {greeting}<hr />
         {/*     <button onClick={handleClick}>Cambiar estado </button>            */}
       {/*  <button onClick={handleAgregar}>Agregar Item </button> */}
