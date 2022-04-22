@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../Footer/footer.css";
-import ItemListContainer from '../../container/ItemListContainer/ItemListConteiner'
+
 //LOGOS
 import Instagram from "../logos/ig.png";
 import Facebook from "../logos/fb.png";

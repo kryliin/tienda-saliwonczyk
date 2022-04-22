@@ -15,11 +15,10 @@ function RoutesApp() {
 
     return (
         <>
-
-            <BrowserRouter>
-                <CartContextProvider>
-                    <NavBar />
-                    <Container>
+            <Container>
+                <BrowserRouter>
+                    <CartContextProvider>
+                        <NavBar />
                         <Titulo tituloProps='Alquileres Saliwonczyk' />
                         <Routes>
                             <Route
@@ -45,12 +44,11 @@ function RoutesApp() {
                             />
 
                         </Routes>
-                    </Container>
-                </CartContextProvider>
-                <br />
-                <Footer />
-            </BrowserRouter>
-
+                    </CartContextProvider>
+                    <br />
+                    <Footer />
+                </BrowserRouter>
+            </Container>
         </>
     )
 }
