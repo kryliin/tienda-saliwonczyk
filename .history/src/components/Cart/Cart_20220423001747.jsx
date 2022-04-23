@@ -8,7 +8,7 @@ import ItemListContainer from "../../container/ItemListContainer/ItemListContein
 
 function Cart() {
 
-  const { cartList, removeCart, totalAPagar, totalJuegos } = useCartContext()
+  const { cartList, removeCart, totalAPagar, cantidadTotalItem } = useCartContext()
 
   const generarOrden = async (e) => {
     e.preventDefault();
@@ -90,7 +90,7 @@ function Cart() {
               </Form.Group>
             </Form>
           </Container>
-          Juegos (Cant): {totalJuegos()}
+          Juegos (Cant): {cantidadTotalItem()}
           <br />
           Total ($) {totalAPagar()}
           <br />
