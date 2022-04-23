@@ -1,0 +1,15 @@
+.cartconteiner {
+  display: flex;
+  width: 100%;
+}
+
+.cartIzquierda{
+    flex:7;
+    border:1px solid
+}
+
+.cartDerecha{
+    flex:3;
+    border:1px solid;
+    margin-left: 10px;
+}

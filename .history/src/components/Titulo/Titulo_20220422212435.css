@@ -1,0 +1,10 @@
+.titulo {
+  color: antiquewhite;
+  background-color: rgb(0, 0, 10);
+  font-size: 25px;
+}
+
+.imgFondo{
+  width: 100px;
+  object-fit: cover;
+}

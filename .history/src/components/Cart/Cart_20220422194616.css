@@ -1,0 +1,37 @@
+.cartconteiner {
+  display: flex;
+  width: 100%;
+  justify-content:center;
+  align-content: center;
+  margin-bottom: 20px;
+}
+
+.cartIzquierda{
+    flex:7;
+   
+}
+
+.cartDerecha{
+    flex:3;
+    border:1px solid;
+    margin-left: 10px;
+}
+
+.cartItem{
+    border:1px solid;
+    margin-bottom: 10px;
+    width: 100%;
+    display:flex;
+    justify-content: space-around;
+}
+
+.cartItem img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.cartDetalle{
+    display: flex;
+    flex-direction: column;
+}

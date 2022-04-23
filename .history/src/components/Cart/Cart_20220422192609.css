@@ -1,0 +1,12 @@
+.cartconteiner {
+  display: flex;
+  width: 100%;
+}
+
+.cartIzquierda{
+    flex:7
+}
+
+.cartDerecha{
+    flex:3
+}
