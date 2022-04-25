@@ -1,0 +1,200 @@
+import Form from 'react-bootstrap/Form'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import InputGroup from 'react-bootstrap/InputGroup'
+import yup from 'react-bootstrapyup'
+import { Formik } from 'formik'
+import Button from 'react-bootstrap/Button/Button'
+
+
+
+const schema = yup.object().shape({
+  nombre: yup.string().required(),
+  apellido: yup.string().required(),
+  username: yup.string().required(),
+  ciudad: yup.string().required(),
+  pais: yup.string().required(),
+  cp: yup.string().required(),
+  observaciones: yup.mixed().required(),
+  terms: yup.bool().required().oneOf([true], 'terms must be accepted'),
+});
+
+
+function Contacto() {
+
+    return (
+
+        <Formik
+      validationSchema={schema}
+      onSubmit={console.log}
+      initialValues={{
+        nombre: 'Nombre',
+        apellido: 'Apellido',
+        username: '',
+        ciudad: '',
+        pais: '',
+        cp: '',
+        observaciones: 'Ingrese sus observaciones',
+        terms: false,
+      }}
+    >
+      {({
+        handleSubmit,
+        handleChange,
+        values,
+        touched,
+        errors,
+      }) => (
+        <Form noValidate onSubmit={handleSubmit}>
+          <Row className="mb-3">
+            <Form.Group
+              as={Col}
+              md="4"
+              controlId="validationFormik101"
+              className="position-relative"
+            >
+              <Form.Label>Nombre</Form.Label>
+              <Form.Control
+                type="text"
+                name="nombre"
+                value={values.nombre}
+                onChange={handleChange}
+                isValid={touched.nombre && !errors.nombre}
+              />
+              <Form.Control.Feedback tooltip>Excelente!</Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group
+              as={Col}
+              md="4"
+              controlId="validationFormik102"
+              className="position-relative"
+            >
+              <Form.Label>Apellido</Form.Label>
+              <Form.Control
+                type="text"
+                name="apellido"
+                value={values.apellido}
+                onChange={handleChange}
+                isValid={touched.apellido && !errors.apellido}
+              />
+
+              <Form.Control.Feedback tooltip>Excelente!</Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group as={Col} md="4" controlId="validationFormikUsername2">
+              <Form.Label>Username</Form.Label>
+              <InputGroup hasValidation>
+                <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
+                <Form.Control
+                  type="text"
+                  placeholder="Username"
+                  aria-describedby="inputGroupPrepend"
+                  name="username"
+                  value={values.username}
+                  onChange={handleChange}
+                  isInvalid={!!errors.username}
+                />
+                <Form.Control.Feedback type="invalid" tooltip>
+                  {errors.username}
+                </Form.Control.Feedback>
+              </InputGroup>
+            </Form.Group>
+          </Row>
+          <Row className="mb-3">
+            <Form.Group
+              as={Col}
+              md="6"
+              controlId="validationFormik103"
+              className="position-relative"
+            >
+              <Form.Label>Ciudad</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Ciudad"
+                name="ciudad"
+                value={values.ciudad}
+                onChange={handleChange}
+                isInvalid={!!errors.ciudad}
+              />
+
+              <Form.Control.Feedback type="invalid" tooltip>
+                {errors.ciudad}
+              </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group
+              as={Col}
+              md="3"
+              controlId="validationFormik104"
+              className="position-relative"
+            >
+              <Form.Label>País</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="País"
+                name="País"
+                value={values.País}
+                onChange={handleChange}
+                isInvalid={!!errors.País}
+              />
+              <Form.Control.Feedback type="invalid" tooltip>
+                {errors.País}
+              </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group
+              as={Col}
+              md="3"
+              controlId="validationFormik105"
+              className="position-relative"
+            >
+              <Form.Label>C.P</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Cod Postal"
+                name="cp"
+                value={values.cp}
+                onChange={handleChange}
+                isInvalid={!!errors.cp}
+              />
+
+              <Form.Control.Feedback type="invalid" tooltip>
+                {errors.cp}
+              </Form.Control.Feedback>
+            </Form.Group>
+          </Row>
+          <Form.Group className="position-relative mb-3">
+          <Form.Label>Observaciones</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Observaciones"
+                name="observaciones"
+                value={values.observaciones}
+                onChange={handleChange}
+                isInvalid={!!errors.observaciones}
+              />
+
+              <Form.Control.Feedback type="invalid" tooltip>
+                {errors.observaciones}
+            </Form.Control.Feedback>
+          </Form.Group>
+          <Form.Group className="position-relative mb-3">
+            <Form.Check
+              required
+              name="terms"
+              label="Agree to terms and conditions"
+              onChange={handleChange}
+              isInvalid={!!errors.terms}
+              feedback={errors.terms}
+              feedbackType="invalid"
+              id="validationFormik106"
+              feedbackTooltip
+            />
+          </Form.Group>
+          <button type="submit">Enviar</button>
+        </Form>
+      )}
+    </Formik>
+
+        
+    )
+}
+
+export default Contacto;
