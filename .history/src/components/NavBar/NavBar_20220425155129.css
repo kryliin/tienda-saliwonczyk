@@ -1,0 +1,20 @@
+
+
+.icono-carro-cant {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    background-color: red;
+    right: 0;
+    top: 0;
+    border-radius: 50%;
+    color: white;
+    font-size: .7rem;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.cart{
+    position: relative;
+}

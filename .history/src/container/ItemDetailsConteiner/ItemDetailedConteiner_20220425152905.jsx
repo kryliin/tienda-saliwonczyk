@@ -1,0 +1,94 @@
+
+import React, { useState, useEffect } from "react";
+import ItemDetailed from './ItemDetailed'
+import { useParams } from 'react-router-dom'
+import { doc, getDoc, getFirestore } from 'firebase/firestore'
+
+
+const ItemDetailedConteiner = () => {
+  const [producto, setProducto] = useState({})
+  const [loading, setLoading] = useState(true)
+
+  const { detalleId } = useParams()
+
+  useEffect(() => {
+    const querydb = getFirestore()
+    const queryProd = doc(querydb, 'Juegos', detalleId)
+
+    getDoc(queryProd)
+      .then(resp => setProducto({ id: resp.id, ...resp.data() }))
+      .catch(err => console.log(err))
+      .finally(() => setLoading(false))
+  }, [detalleId])
+
+  console.log(detalleId)
+  return (
+    <div className="border">
+      {loading ?
+        <h2>Tirando Dados...</h2> :
+        <ItemDetailed producto={producto} />
+      }
+    </div>
+  );
+};
+
+
+export default ItemDetailedConteiner;
+
+
+
+
+
+
+/* import Modal from 'react-bootstrap/Modal'
+import { useState } from 'react'
+import { Button } from 'react-bootstrap'
+
+import ModalHeader from 'react-bootstrap/ModalHeader'
+import ModalTitle from 'react-bootstrap/ModalTitle'
+import ModalBody from 'react-bootstrap/ModalBody'
+import ModalFooter from 'react-bootstrap/ModalFooter'
+
+
+function Detalles({ producto }) {
+  const [show, setShow] = useState(false);
+
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  console.log(producto)
+
+  return (
+    <>
+      <Button variant="primary" onClick={handleShow}>
+        {producto.nombre}
+      </Button>
+
+      <Modal
+        show={show}
+        onHide={() => setShow(false)}
+        dialogClassName="modal-90w"
+        aria-labelledby="example-custom-modal-styling-title"
+      >
+        <ModalHeader closeButton>
+          <ModalTitle id="example-custom-modal-styling-title">
+            {producto.nombre}
+          </ModalTitle>
+        </ModalHeader>
+        <ModalBody>
+          <p>
+            {producto.description}
+          </p>
+        </ModalBody>
+        <ModalFooter>
+          <Button variant="secondary" onClick={handleClose}>
+            Cerrar
+          </Button>
+
+        </ModalFooter>
+      </Modal>
+    </>
+  )
+};
+
+export default Detalles; */
