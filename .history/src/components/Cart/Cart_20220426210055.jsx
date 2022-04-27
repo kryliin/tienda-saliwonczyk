@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react'
 import { addDoc, collection, documentId, getDocs, getFirestore, query, where, writeBatch } from 'firebase/firestore'
 import './Cart.css'
 import ItemListContainer from "../../container/ItemListContainer/ItemListConteiner"
-import swal from 'bootstrap-sweetalert'
 
 function Cart() {
   const [formData, setFormData] = useState({
@@ -57,19 +56,10 @@ function Cart() {
 
     await getDocs(queryActulizarStock)
       .then(resp => resp.docs.forEach(res => batch.update(res.ref, {
-        cantidad: res.data().cantidad - cartList.find(item => item.id === res.id).cantidad
+        stock: res.data().stock - cartList.find(item => item.id === res.id).cantidad
       })))
-      .finally(() => 
-      swal({
-        title: "Excelente!",
-        text: 'Se Ha Generado Su Orden, en breve le mandaremos un mail a: ' + orden.buyer.email,
-        icon: "success",
-        button: "Si",
-        confirmButtonClass: "btn-success",
-        buttonText: 'Si'
-    }))
+      .finally(() => alert('Se Ha Generado Su Orden, en breve le mandaremos un mail a: ' + orden.buyer.email))
 
-    removeCart();
     batch.commit()
   }
 
@@ -85,12 +75,17 @@ function Cart() {
     }
   }, [isLoading]);
 
+
+
+
   const handleChange = (event) => {
     setFormData({
       ...formData,
       [event.target.name]: event.target.value
     })
   }
+
+
 
 
   return (
@@ -113,7 +108,7 @@ function Cart() {
             <div className='cartconteiner'>
               <div className='cartIzquierda'>
                 <h2>Su Carrito Esta Vacio</h2>
-                <Link className="btn btn-warning" to="/" element={<ItemListContainer />}>Ir a Tienda</Link>
+                <Link className="btn btn-dark" to="/" element={<ItemListContainer />}>Ir a Tienda</Link>
               </div>
             </div>
           </>

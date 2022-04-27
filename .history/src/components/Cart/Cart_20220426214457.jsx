@@ -57,7 +57,7 @@ function Cart() {
 
     await getDocs(queryActulizarStock)
       .then(resp => resp.docs.forEach(res => batch.update(res.ref, {
-        cantidad: res.data().cantidad - cartList.find(item => item.id === res.id).cantidad
+        stock: res.data().stock - cartList.find(item => item.id === res.id).cantidad
       })))
       .finally(() => 
       swal({
@@ -113,7 +113,7 @@ function Cart() {
             <div className='cartconteiner'>
               <div className='cartIzquierda'>
                 <h2>Su Carrito Esta Vacio</h2>
-                <Link className="btn btn-warning" to="/" element={<ItemListContainer />}>Ir a Tienda</Link>
+                <Link className="btn btn-dark" to="/" element={<ItemListContainer />}>Ir a Tienda</Link>
               </div>
             </div>
           </>

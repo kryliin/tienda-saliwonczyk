@@ -16,7 +16,7 @@ function ItemDetailed({ producto }) {
       button: "Si",
       confirmButtonClass: "btn-success",
       buttonText: 'Si'
-    });
+  });
     addToCart({ ...producto, cantidad: cant })
   }
 
@@ -43,7 +43,10 @@ function ItemDetailed({ producto }) {
               onAdd={onAdd}
               initial={0}
             />
+
+            
           </div>
+
         </div>
 
       </Container>

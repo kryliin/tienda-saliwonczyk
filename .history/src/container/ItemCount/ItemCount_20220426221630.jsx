@@ -83,7 +83,7 @@ function ItemCount({ initial, stock, onAdd }) {
                     <Link  to="/" element={<ItemListContainer />}>Ir a la Tienda</Link>
                 </button>
                 <br />
-                <button className="btn btn-dark"  size="sm">
+                <button className="btn btn-warning"  size="sm">
                     <Link to="/cart">Ir al Carrito</Link>
                 </button>
 

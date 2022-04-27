@@ -113,7 +113,7 @@ function Cart() {
             <div className='cartconteiner'>
               <div className='cartIzquierda'>
                 <h2>Su Carrito Esta Vacio</h2>
-                <Link className="btn btn-warning" to="/" element={<ItemListContainer />}>Ir a Tienda</Link>
+                <Link className="btn btn-dark" to="/" element={<ItemListContainer />}>Ir a Tienda</Link>
               </div>
             </div>
           </>

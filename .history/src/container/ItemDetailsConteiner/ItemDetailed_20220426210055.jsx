@@ -3,7 +3,7 @@ import ItemCount from '../ItemCount/ItemCount';
 import { useCartContext } from "../../context/CartContext"
 import './ItemDetailed.css'
 import Container from 'react-bootstrap/Container'
-import swal from 'bootstrap-sweetalert'
+
 
 function ItemDetailed({ producto }) {
   const { addToCart } = useCartContext()
@@ -16,7 +16,7 @@ function ItemDetailed({ producto }) {
       button: "Si",
       confirmButtonClass: "btn-success",
       buttonText: 'Si'
-    });
+  });
     addToCart({ ...producto, cantidad: cant })
   }
 
@@ -43,7 +43,10 @@ function ItemDetailed({ producto }) {
               onAdd={onAdd}
               initial={0}
             />
+
+            
           </div>
+
         </div>
 
       </Container>

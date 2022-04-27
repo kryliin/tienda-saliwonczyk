@@ -79,12 +79,12 @@ function ItemCount({ initial, stock, onAdd }) {
                 <button className="btn btn-success" size="lg" onClick={add}>
                     <CartWidget name={"Agregar"} />
                 </button>{' '}
-                <button className="btn btn-warning" size="sm">
-                    <Link  to="/" element={<ItemListContainer />}>Ir a la Tienda</Link>
+                <button className="btn btn-dark" size="lg">
+                    <Link className="btn btn-dark" to="/" element={<ItemListContainer />}>Ir a la Tienda</Link>
                 </button>
                 <br />
-                <button className="btn btn-dark"  size="sm">
-                    <Link to="/cart">Ir al Carrito</Link>
+                <button className="btn btn-success" size="lg">
+                    <Link className="btn" to="/cart">Ir al Carrito</Link>
                 </button>
 
             </div>

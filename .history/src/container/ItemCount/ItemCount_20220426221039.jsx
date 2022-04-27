@@ -5,6 +5,8 @@ import CartWidget from '../../components/NavBar/CartWidget';
 import ItemListContainer from '../ItemListContainer/ItemListConteiner.jsx'
 import { Link } from 'react-router-dom'
 import swal from 'bootstrap-sweetalert'
+import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
+import ToggleButton from 'react-bootstrap/ToggleButton'
 
 
 function ItemCount({ initial, stock, onAdd }) {
@@ -76,16 +78,31 @@ function ItemCount({ initial, stock, onAdd }) {
 
                 <br />
 
+                <br />
+
+                <ToggleButtonGroup type="checkbox">
+                    <ToggleButton id="tbg-btn-1" onClick={add}>
+                    <CartWidget name={"Agregar"} />
+                    </ToggleButton>
+                    <ToggleButton id="tbg-btn-2" value={2}>
+                    <Link className="tbg-btn-3" to="/" element={<ItemListContainer />}>Tienda</Link>
+                    </ToggleButton>
+                    <ToggleButton id="tbg-btn-3" value={3}>
+                    <Link className="tbg-btn-3" to="/cart">Ir al Carrito</Link>
+                    </ToggleButton>
+                </ToggleButtonGroup>
+
+{/* 
+
                 <button className="btn btn-success" size="lg" onClick={add}>
                     <CartWidget name={"Agregar"} />
                 </button>{' '}
-                <button className="btn btn-warning" size="sm">
-                    <Link  to="/" element={<ItemListContainer />}>Ir a la Tienda</Link>
+                <button className="btn btn-warrning" size="lg">
+                    <Link className="btn btn-warrning" to="/" element={<ItemListContainer />}>Tienda</Link>
                 </button>
-                <br />
-                <button className="btn btn-dark"  size="sm">
-                    <Link to="/cart">Ir al Carrito</Link>
-                </button>
+                <button className="btn btn-success" size="lg">
+                    <Link className="btn" to="/cart">Ir al Carrito</Link>
+                </button> */}
 
             </div>
         </fieldset>

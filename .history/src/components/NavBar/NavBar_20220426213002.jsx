@@ -13,6 +13,8 @@ import { useCartContext } from '../../context/CartContext'
 import './NavBar.css'
 import Ordenes from '../Ordenes/Ordenes'
 
+
+
 export const NavBar = () => {
 
     const { cantidadTotalItem } = useCartContext()
@@ -29,32 +31,45 @@ export const NavBar = () => {
                             <NavLink className="btn btn-dark" to="/contacto" element={<Contacto />}>Contacto</NavLink>
                             <NavLink className="btn btn-dark" to="/ordenes" element={<Ordenes />}>Ordenes</NavLink>
                             <NavDropdown title="Juegos" id="collasible-nav-dropdown">
+
                                 <NavDropdown.Item >
                                     <Link id="RouterNavLink" to="categoria/Familiar">Familiar
                                     </Link>
                                 </NavDropdown.Item>
+
+
                                 <NavDropdown.Item >
                                     <Link id="RouterNavLink" to="/categoria/Accion">Accion
                                     </Link>
                                 </NavDropdown.Item>
+
+
                                 <NavDropdown.Item>
                                     <Link id="RouterNavLink" to="/categoria/Estrategia">Estrategia
                                     </Link>
                                 </NavDropdown.Item>
+
+
                                 <NavDropdown.Item >
                                     <Link id="RouterNavLink" to="/categoria/Preguntas y Respuestas">Preguntas y Respuestas
                                     </Link>
                                 </NavDropdown.Item>
+
+
                                 <NavDropdown.Item >
                                     <Link id="RouterNavLink" to="/categoria/Infantiles">Infantiles
                                     </Link>
                                 </NavDropdown.Item>
+
                                 <NavDropdown.Divider />
+
                                 <NavDropdown.Item>
                                     <Link id="RouterNavLink" to="/">Ver Todos
                                     </Link>
                                 </NavDropdown.Item>
+
                             </NavDropdown>
+
                         </Nav>
                         <Nav>
                             <Link className="btn btn-dark" to="/usuarios">Usuario</Link>

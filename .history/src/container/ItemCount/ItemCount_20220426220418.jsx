@@ -10,6 +10,7 @@ import swal from 'bootstrap-sweetalert'
 function ItemCount({ initial, stock, onAdd }) {
     const [contadorActual, setCount] = useState(initial)
 
+
     const agregar = () => {
         if (contadorActual >= stock) {
             swal({
@@ -25,6 +26,7 @@ function ItemCount({ initial, stock, onAdd }) {
 
             setCount(contadorActual + 1)
         }
+
     }
 
     const quitar = () => {
@@ -43,6 +45,7 @@ function ItemCount({ initial, stock, onAdd }) {
         }
     }
 
+
     const add = () => {
         if (contadorActual < 1) {
             swal({
@@ -57,6 +60,7 @@ function ItemCount({ initial, stock, onAdd }) {
         } else {
             onAdd(contadorActual)
         }
+
     }
 
     return (
@@ -76,15 +80,15 @@ function ItemCount({ initial, stock, onAdd }) {
 
                 <br />
 
+                <br />
                 <button className="btn btn-success" size="lg" onClick={add}>
                     <CartWidget name={"Agregar"} />
                 </button>{' '}
-                <button className="btn btn-warning" size="sm">
-                    <Link  to="/" element={<ItemListContainer />}>Ir a la Tienda</Link>
+                <button className="btn btn-dark" size="lg">
+                    <Link className="btn btn-dark" to="/" element={<ItemListContainer />}>Tienda</Link>
                 </button>
-                <br />
-                <button className="btn btn-dark"  size="sm">
-                    <Link to="/cart">Ir al Carrito</Link>
+                <button className="btn btn-success" size="lg"  size="sm">
+                    <Link className="btn" to="/cart">Ir al Carrito</Link>
                 </button>
 
             </div>
