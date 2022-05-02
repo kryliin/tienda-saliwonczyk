@@ -79,7 +79,7 @@ Free
 
 **Free Software, Hell Yeah!**
 
-Dev. Esp. Ing Saliwonczyk
+Developer: Esp. Ing Saliwonczyk
 [CharruaSistemas]
 
 [//]: # 
