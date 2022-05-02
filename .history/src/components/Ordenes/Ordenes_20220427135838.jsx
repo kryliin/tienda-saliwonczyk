@@ -1,19 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { doc,  getFirestore } from 'firebase/firestore'
+import { doc,  getFirestore, getDoc } from 'firebase/firestore'
 import Orden from './Orden'
 
 export default function Ordenes() {
     const [ordenes, setOrdenes] = useState({})
     const [loading, setLoading] = useState(true)
 
-
-
-
     useEffect(() => {
-        const querydb = getFirestore()
-        const queryProd = doc(querydb, 'ordenesDeAlquiler')
-
-        doc(queryProd)
+        const db = getFirestore();
+        const queryProd = doc(db, 'ordenesDeAlquiler');
+        console.log("queryProd" + queryProd)
+        getDoc(queryProd)
             .then(resp => setOrdenes({ id: resp.id, ...resp.data() }))
             .catch(err => console.log(err))
             .finally(() => setLoading(false))
