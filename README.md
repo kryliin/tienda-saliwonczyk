@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+# Documentación tienda-saliwonczyk
+## _Tienda e-commerce de Juegos de Mesa_
+[![N|Solid](https://camo.githubusercontent.com/42052a7bb5e9e14d95dea81478a4bd99516ae4442bcae43d835b1924ec4d0421/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c696e6b6564496e2d696e666f726d6174696f6e616c3f7374796c653d666f722d7468652d6261646765266c6f676f3d6c696e6b6564696e266c6f676f436f6c6f723d66666626636f6c6f723d323332373264)](https://www.linkedin.com/in/christian-saliwonczyk-59250b52/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este Proyecto es una Tienda de e-commerce sobre alquiler de juegos de mesas, sigueindo las premisas de "ventas", donde se podra seleccionar uno o mas juegos de mesa asi como sus cantidades para luego en el carrito generar una orden de compra.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Codigo Front: React Js
+- Persistencia (DB no relacional): Firebase (MongoDB)
+- Estilos: Bosstrap
+- Plugins de soporte como yarn, formik, image-gallery, sweetAlert2 etc.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+React React te ayuda a crear interfaces de usuario interactivas de forma sencilla. Diseña vistas simples para cada estado en tu aplicación, y React se encargará de actualizar y renderizar de manera eficiente los componentes correctos cuando los datos cambien. Las vistas declarativas hacen que tu código sea más predecible, por lo tanto, fácil de depurar. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Crea componentes encapsulados que manejen su propio estado, y conviértelos en interfaces de usuario complejas. Ya que la lógica de los componentes está escrita en JavaScript y no en plantillas, puedes pasar datos de forma sencilla a través de tu aplicación y mantener el estado fuera del DOM.
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+e-commerce Saliwonczyk requiere [Node.js](https://nodejs.org/) v10+ para correr.
 
-### `npm run build`
+Como Instalar:
+```
+git clone https://github.com/kryliin/tienda-saliwonczyk.git
+cd tienda-saliwonczyk
+npm install
+npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Plugins
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Esta tienda actualmente usa los siguientes plugins.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+| Plugin | Install |
+| ------ | ------ |
+| React Router Dom |```install react-router-dom ```|
+| Boostrap | ```npm install react-bootstrap bootstrap```|
+| Sweet Alert 2 | ```npm install sweetalert2 ```|
+| Formik |```npm install formik --save``` |
+| Imagen Galery |```npm install react-image-gallery ```|
+| Yup | ``` npm install -S yup``` |
 
-### `npm run eject`
+### React Router Dom  ([react-router-dom])
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+React Router es una biblioteca de enrutamiento del lado del servidor y del cliente con todas las funciones para React, una biblioteca de JavaScript para crear interfaces de usuario. React Router se ejecuta en cualquier lugar React se ejecuta; en la web, en el servidor con node.js y en React Native.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Si recién está comenzando con React en general, le recomendamos que siga la excelente guía de inicio en los documentos oficiales. Hay mucha información allí para ponerlo en marcha. React Router es compatible con React >= 16.8.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Mantendremos este tutorial rápido y directo. Al final, sabrá las API con las que trabaja día a día con React Router. Después de eso, puede profundizar en algunos de los otros documentos para obtener una comprensión más profunda.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Boostrap ([bootstrap])
 
-## Learn More
+React-Bootstrap reemplaza el JavaScript de Bootstrap. Cada componente se ha creado desde cero como un verdadero componente de React, sin dependencias innecesarias como jQuery. Como una de las bibliotecas de React más antiguas, React-Bootstrap ha evolucionado y crecido junto con React, lo que la convierte en una excelente opción como base de la interfaz de usuario.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Creado teniendo en cuenta la compatibilidad, adoptamos nuestro núcleo de arranque y nos esforzamos por ser compatibles con el ecosistema de interfaz de usuario más grande del mundo. Al confiar completamente en la hoja de estilo de Bootstrap, React-Bootstrap simplemente funciona con los miles de temas de Bootstrap que ya le encantan.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+El modelo de componentes de React nos da más control sobre la forma y función de cada componente. Cada componente se implementa teniendo en cuenta la accesibilidad. El resultado es un conjunto de componentes accesibles por defecto, sobre lo que es posible con Bootstrap simple.
 
-### Code Splitting
+### Sweet Alert 2 ([sweetAlert2])
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Un reemplazo hermoso, con responsabilidad, personalizable y accesible (wai-aria) para las cajas emergentes de javascript con cero dependencias.
+ 
+### Yup ([yup])
 
-### Analyzing the Bundle Size
+Yup, es un generador de esquemas de JavaScript para el análisis y la validación de valores. Defina un esquema, transforme un valor para que coincida, valide la forma de un valor existente o ambos. Sí, los esquemas son extremadamente expresivos y permiten modelar validaciones complejas e interdependientes o transformaciones de valores.
+La API de Yup está fuertemente inspirada en Joi, pero es más sencilla y está construida con la validación del lado del cliente como su principal caso de uso. Sí, separa las funciones de análisis y validación en pasos separados. cast() transforma los datos mientras que la validación verifica que la entrada tenga la forma correcta. Cada uno se puede realizar en conjunto (como la validación de formularios HTML) o por separado (como deserializar datos confiables de las API).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Imports Utilizados
 
-### Making a Progressive Web App
+```
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap');
+@import "~react-image-gallery/styles/css/image-gallery.css";
+@import url('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css');
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Licencia
+Free
 
-### Advanced Configuration
+**Free Software, Hell Yeah!**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Dev. Esp. Ing Saliwonczyk
+[CharruaSistemas]
 
-### Deployment
+[//]: # 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+   [CharruaSistemas]: <http://charruasistemas.com.uy/>
+   [react-router-dom]: <https://reactrouter.com/>
+   [bootstrap]: <https://react-bootstrap.netlify.app/getting-started/introduction>
+   [sweetAlert2]: <https://sweetalert2.github.io/>
+    [yup]: <https://www.npmjs.com/package/yup>
+ 
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
