@@ -4,6 +4,11 @@
 
 Este Proyecto es una Tienda de e-commerce sobre alquiler de juegos de mesas, sigueindo las premisas de "ventas", donde se podra seleccionar uno o mas juegos de mesa asi como sus cantidades para luego en el carrito generar una orden de compra.
 
+## Demo
+
+https://e-commerce-saliwonczyk.netlify.app
+
+
 ## Features
 
 - Codigo Front: React Js
