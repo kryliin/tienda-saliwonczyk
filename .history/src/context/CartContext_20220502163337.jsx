@@ -27,7 +27,7 @@ function CartContextProvider({ children }) { //componente
                 item
             ])
         }
-
+  
         setCartList([
             ...cartList,
             item
@@ -50,11 +50,11 @@ function CartContextProvider({ children }) { //componente
     };
 
     const cantidadTotalItem = () => {
-        return cartList.reduce((acum, prod) => acum += prod.cantidad, 0)
+        return cartList.reduce((acum, prod) => acum += prod.cantidad , 0)
     };
 
     const eliminarItem = (id) => {
-        setCartList(cartList.filter(prod => prod.id !== id))
+        setCartList( cartList.filter(prod => prod.id !== id) )
     }
 
     return (

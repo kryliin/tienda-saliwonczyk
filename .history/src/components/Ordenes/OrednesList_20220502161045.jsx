@@ -4,7 +4,9 @@ function ItemList({ ordenes }) {
   return (
     <>
       <div>
-        {ordenes.map((order) =>  <Orden key={order.id} ordenes={order} /> )}
+        {ordenes.map((order) => 
+        <Orden key={order.id} ordenes={order} />
+        )}
       </div>
     </>
   )

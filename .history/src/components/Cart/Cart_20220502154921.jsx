@@ -44,6 +44,8 @@ function Cart() {
     await addDoc(queryCollection, orden)
       .then(({ id }) => console.log(id))
 
+
+    // actualizar el stock
     const queryCollectionStock = collection(db, 'Juegos')
 
     const queryActulizarStock = await query(

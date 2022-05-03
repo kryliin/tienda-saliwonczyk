@@ -75,7 +75,7 @@ function ItemCount({ initial, stock, onAdd }) {
                 <Button size="sm" onClick={() => agregar()} variant="outline-success">+</Button>{' '}
 
                 <br />
-
+               
                 <button className="btn btn-success mt-3" size="lg" onClick={add}>
                     <CartWidget name={"Agregar"} />
                 </button>{' '}

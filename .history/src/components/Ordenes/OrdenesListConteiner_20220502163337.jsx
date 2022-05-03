@@ -33,6 +33,7 @@ export default function Ordenes() {
             .finally(() => setLoading(false))
     }, [id])
 
+    console.log("ordenes" + ordenes)
     return (
         <div className="border">
             {loading ?

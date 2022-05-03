@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { getDocs, getFirestore, collection, query, where } from 'firebase/firestore'
 import OrdenesList from './OrednesList.jsx'
 import { useParams } from 'react-router-dom'
-import swal from 'bootstrap-sweetalert'
 
 export default function Ordenes() {
     const [ordenes, setOrdenes] = useState([])
@@ -22,17 +21,11 @@ export default function Ordenes() {
 
         getDocs(queryFilter)
             .then(resp => setOrdenes(resp.docs.map(items => ({ id: items.id, ...items.data() }))))
-            .catch(err => swal({
-                title: "Oops!",
-                text: err,
-                icon: "error",
-                button: "Entiendo",
-                confirmButtonClass: "btn-warning",
-                buttonText: 'Entiendo'
-            }))
+            .catch(err => console.log(err))
             .finally(() => setLoading(false))
     }, [id])
-
+ 
+    console.log("ordenes" + ordenes)
     return (
         <div className="border">
             {loading ?

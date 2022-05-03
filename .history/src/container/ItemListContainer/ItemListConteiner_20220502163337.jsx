@@ -11,7 +11,7 @@ function ItemListContainer({ greeting }) {
     //const [items, setItems] = useState([])
 
     const { categoriaId } = useParams()
-
+    
     useEffect(() => {
         const querydb = getFirestore()
         const queryCollection = collection(querydb, 'Juegos')
@@ -24,7 +24,7 @@ function ItemListContainer({ greeting }) {
 
         getDocs(queryFilter)
             .then(resp => setProductos(resp.docs.map(item => ({ id: item.id, ...item.data() }))))
-            .catch(err => swal({
+            .catch(err =>swal({
                 title: "Oops!",
                 text: err,
                 icon: "error",

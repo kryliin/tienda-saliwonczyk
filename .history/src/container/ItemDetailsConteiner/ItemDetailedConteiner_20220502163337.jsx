@@ -25,7 +25,7 @@ const ItemDetailedConteiner = () => {
         button: "Entiendo",
         confirmButtonClass: "btn-warning",
         buttonText: 'Entiendo'
-      }))
+    }))
       .finally(() => setLoading(false))
   }, [detalleId])
 
@@ -36,7 +36,7 @@ const ItemDetailedConteiner = () => {
         <h2>Tirando Dados...</h2> :
         <ItemDetailed producto={producto} />
       }
-    </>
+  </>
   );
 };
 
